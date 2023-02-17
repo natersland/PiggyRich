@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="#"  target="_blank"><img width="150" src="https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png" alt="PiggyRich"></a>
+  <a href="#"  target="_blank"><img width="150" src="./app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" alt="PiggyRich"></a>
 </p>
 <h1 align="center">PiggyRich (Native Android)</h1>
 
