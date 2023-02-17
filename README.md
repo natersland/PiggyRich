@@ -13,7 +13,7 @@ Features
 Goal
 - POC about Showkase: https://github.com/airbnb/Showkase
 - POC about Paparazzi: https://github.com/cashapp/paparazzi
-- Make saving challenge more funny!
+- Make saving money challenge more funny!
 
 **Stack I Used**:
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit
