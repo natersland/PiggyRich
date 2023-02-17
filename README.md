@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">PiggyRich (Native Android)</h1>
 
-> **Current version: In developing (10% of 100%)**
+> **Current version: In developing (20% of 100%)**
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -25,13 +25,11 @@ Features
 
 ## Preview Images
 
-Figma design: https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-id=0%3A1&t=QPZ5B0ve84NlezL5-1
-
 
 ## Developing Task
 - [x] 5% - POC about Showkase: https://github.com/airbnb/Showkase
 - [x] 10% - POC about Paparazzi: https://github.com/cashapp/paparazzi
-- [ ] 20% - UX & UI Design
+- [x] 20% - UX & UI Design: https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-id=0%3A1&t=QPZ5B0ve84NlezL5-1
 - [ ] 25% - List all stack
 - [ ] 30% - Setup Project
 - [ ] 40% - Setup Theme and Color
