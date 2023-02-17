@@ -1,4 +1,4 @@
-package com.natersfantasy.piggyrichrpg
+package com.natersfantasy.piggyrichrpg.scence
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

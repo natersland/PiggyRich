@@ -2,7 +2,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id "org.jetbrains.kotlin.kapt"
+    id 'kotlin-kapt'
 }
 
 android {
@@ -20,6 +20,14 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
+    }
+    sourceSets {
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
     }
 
     buildTypes {
@@ -49,7 +57,7 @@ android {
 }
 
 dependencies {
-    kapt 'groupId:artifactId:1.8.10'
+//    kapt 'groupId:artifactId:1.8.10'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
@@ -69,9 +77,10 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
     // Room
-    def room_version = "2.5.0"
-    implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
+    implementation "androidx.room:room-runtime:2.5.0"
+    kapt "androidx.room:room-compiler:2.5.0"
+    implementation "androidx.room:room-ktx:2.5.0"
+    androidTestImplementation "androidx.room:room-testing:2.5.0"
 
     // Showkase
     implementation "com.airbnb.android:showkase:1.0.0-beta17"
