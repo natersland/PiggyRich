@@ -44,8 +44,13 @@ Figma design: https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-i
 - [ ] 100% - user can go to badge screen and see all badge
 
 
+## Todo
+- [ ] I have checked that the code run smoothly on Android devices
+- [ ] I have checked the format & indentation
+- [ ] I have removed all logs
+- [ ] I have made presentation for demo app
+
 ## Contributor
 Akira Chenyavanij
 - Android Developer
 - UX & UI Design
-- Graphic Design
