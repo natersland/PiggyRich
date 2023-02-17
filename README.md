@@ -25,6 +25,8 @@ Features
 
 ## Preview Images
 
+Figma design: https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-id=0%3A1&t=QPZ5B0ve84NlezL5-1
+
 
 ## Develop Task
 - [x] 5% - POC about Showkase: https://github.com/airbnb/Showkase
