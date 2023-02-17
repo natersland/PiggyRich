@@ -36,7 +36,7 @@ Features
 - [ ] 70% - User can touch challenge card and go to challenge screen.
 - [ ] 80% - User can see all level in challenge screen and can finished saving task.
 - [ ] 90% - User can see current challenge challenge and after challenge finished the challenge must move to all challenge with verify icon
-- [ ] 100% - User can go to badge screen and see all badge
+- [ ] 100% - (Optional / v2) User can go to badge screen and see all badge
 
 
 ## Todo
