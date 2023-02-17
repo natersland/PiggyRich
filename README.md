@@ -28,7 +28,7 @@ Features
 Figma design: https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-id=0%3A1&t=QPZ5B0ve84NlezL5-1
 
 
-## Develop Task
+## Developing Task
 - [x] 5% - POC about Showkase: https://github.com/airbnb/Showkase
 - [x] 10% - POC about Paparazzi: https://github.com/cashapp/paparazzi
 - [ ] 20% - UX & UI Design
@@ -44,7 +44,8 @@ Figma design: https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-i
 - [ ] 100% - user can go to badge screen and see all badge
 
 
-## Developer
-🐳Akira Chenyavanij (Nut)
+## Contributor
+Akira Chenyavanij
+- Android Developer
 - UX & UI Design
-- Mobile Development (Android)
+- Graphic Design
