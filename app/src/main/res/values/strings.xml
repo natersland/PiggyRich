@@ -1,3 +1,43 @@
 <resources>
-    <string name="app_name">PiggyRichRPG</string>
+    <string name="app_name" translatable="false">Piggy Rich</string>
+    <string name="user_detail_about_me">เกี่ยวกับฉัน</string>
+    <string name="user_detail_nickname">ชื่อเล่น</string>
+    <string name="user_detail_nickname">ตอนนี้มีเงินเก็บเท่าไหร่?</string>
+    <string name="user_detail_nickname">ถัดไป</string>
+
+    <string name="user_result_you_are_level">คุณคือนักเก็บเงิน</string>
+    <string name="user_result_user_level" translatable="false">Level %s</string>
+    <string name="user_result_start">เริ่มเก็บเงิน</string>
+
+    <string name="home_your_current_saving_text">คุณเก็บเงินได้ทั้งหมด</string>
+    <string name="home_current_challenge">ชาเลนจ์ปัจจุบัน</string>
+
+    <string name="bath">บาท</string>
+
+    <string name="level_kept_money">เก็บเงิน</string>
+    <string name="level_1_chicken_goal" translatable="false">500</string>
+    <string name="level_1_chicken_name">ไก่น้อย</string>
+    <string name="level_2_giraffe_goal" translatable="false">1,000</string>
+    <string name="level_2_giraffe_name">ยีราฟหัดเก็บเงิน</string>
+    <string name="level_3_lobster_goal" translatable="false">5,000</string>
+    <string name="level_3_lobster_name">ล็อปเตอร์นักลงทุน</string>
+    <string name="level_4_frog_goal" translatable="false">10,000</string>
+    <string name="level_4_frog_name">กบสร้างตัว</string>
+    <string name="level_5_dolphin_goal" translatable="false">50,000</string>
+    <string name="level_5_dolphin_name">โลมาพ่อค้าทอง</string>
+    <string name="level_6_cat_goal" translatable="false">100,000</string>
+    <string name="level_6_cat_name">แมวเศรษฐี</string>
+
+    <string name="challenge_goal">เป้าหมาย</string>
+    <string name="challenge_level" translatable="false">Lv</string>
+    <string name="challenge_level_1" translatable="false">1</string>
+    <string name="challenge_level_2" translatable="false">2</string>
+    <string name="challenge_level_3" translatable="false">3</string>
+    <string name="challenge_level_4" translatable="false">4</string>
+    <string name="challenge_times">ครั้ง</string>
+    <string name="challenge_total">รวมเป็นเงิน</string>
+    
+    <string name="badge_current_saving_text">เก็บเงินได้ทั้งหมด</string>
+    <string name="badge_current_saving_money" translatable="false">%s / %s</string>
+    <string name="badge_badge_text">เหรียญรางวัล</string>
 </resources>
