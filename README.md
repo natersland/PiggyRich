@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="#"  target="_blank"><img width="150" src="./app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" alt="PiggyRich"></a>
+  <a href="#"  target="_blank"><img width="150" src="./app/src/main/res/drawable/char_giraffe.png" alt="PiggyRich"></a>
 </p>
 <h1 align="center">PiggyRich (Native Android)</h1>
 
