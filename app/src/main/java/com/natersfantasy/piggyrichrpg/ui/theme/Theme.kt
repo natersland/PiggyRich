@@ -11,8 +11,8 @@ private val DarkColorPalette = darkColors(
     primary = PiggyPigColor.Giraffe,
     primaryVariant = PiggyPigColor.Giraffe,
     secondary = PiggyPigColor.GiraffePattern,
-    surface = Color.White,
-    background = Color.White,
+    surface = PiggyPigColor.GrayText,
+    background = PiggyPigColor.GrayText,
 )
 
 private val LightColorPalette = lightColors(
