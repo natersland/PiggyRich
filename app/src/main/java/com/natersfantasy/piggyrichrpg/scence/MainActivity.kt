@@ -20,31 +20,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             PiggyRichRPGTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    PiggyPigApp()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(
-        text = stringResource(id = R.string.user_detail_about_me),
-        color = PiggyPigColor.Frog,
-        style = MaterialTheme.typography.h1
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    PiggyRichRPGTheme {
-        Greeting("Android")
     }
 }

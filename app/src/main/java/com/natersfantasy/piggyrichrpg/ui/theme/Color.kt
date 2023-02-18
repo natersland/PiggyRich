@@ -14,6 +14,8 @@ object PiggyPigColor {
 
     val Disable = Color(0xFFD9D9D9)
 
-    val PrimaryText = Color(0xFF818181)
+    val GiraffeYellowText = Color(0xFFFFC265)
+    val GiraffeBrownText = Color(0xFFAD5E2F)
+    val GrayText = Color(0xFF818181)
 }
 
