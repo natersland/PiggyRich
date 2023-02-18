@@ -5,21 +5,25 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = PiggyPigColor.Giraffe,
+    primaryVariant = PiggyPigColor.Giraffe,
+    secondary = PiggyPigColor.GiraffePattern,
+    surface = Color.White,
+    background = Color.White,
 )
 
 private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = PiggyPigColor.Giraffe,
+    primaryVariant = PiggyPigColor.Giraffe,
+    secondary = PiggyPigColor.GiraffePattern,
+    surface = Color.White,
+    background = Color.White,
+
 
     /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
     onPrimary = Color.White,
     onSecondary = Color.Black,
     onBackground = Color.Black,
@@ -37,7 +41,7 @@ fun PiggyRichRPGTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Comp
 
     MaterialTheme(
         colors = colors,
-        typography = Typography,
+        typography = PiggyPigTypography,
         shapes = Shapes,
         content = content
     )

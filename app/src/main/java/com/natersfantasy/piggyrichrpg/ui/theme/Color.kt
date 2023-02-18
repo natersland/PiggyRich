@@ -2,7 +2,18 @@ package com.natersfantasy.piggyrichrpg.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+
+object PiggyPigColor {
+    val Chicken = Color(0xFFEE7D83)
+    val Giraffe = Color(0xFFFFCE84)
+    val GiraffePattern = Color(0xFFAD5E2E)
+    val Lobster = Color(0xFFFF8759)
+    val Frog = Color(0xFFBEE8AA)
+    val Dolphin = Color(0xFFA2D5FF)
+    val Cat = Color(0xFFFFBFA2)
+
+    val Disable = Color(0xFFD9D9D9)
+
+    val PrimaryText = Color(0xFF818181)
+}
+

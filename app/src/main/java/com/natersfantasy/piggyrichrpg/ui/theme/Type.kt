@@ -1,28 +1,66 @@
 package com.natersfantasy.piggyrichrpg.ui.theme
 
 import androidx.compose.material.Typography
+import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.googlefonts.Font
+import androidx.compose.ui.text.googlefonts.GoogleFont
 import androidx.compose.ui.unit.sp
+import com.natersfantasy.piggyrichrpg.R
 
-// Set of Material typography styles to start with
-val Typography = Typography(
+@OptIn(ExperimentalTextApi::class)
+val provider = GoogleFont.Provider(
+    providerAuthority = "com.google.android.gms.fonts",
+    providerPackage = "com.google.android.gms",
+    certificates = R.array.com_google_android_gms_fonts_certs
+)
+
+@OptIn(ExperimentalTextApi::class)
+val MitrFont = GoogleFont(name = "Mitr")
+
+@OptIn(ExperimentalTextApi::class)
+val MitrFontFamily = FontFamily(
+    Font(MitrFont, fontProvider = provider),
+    androidx.compose.ui.text.font.Font(resId = R.font.mitr_regular),
+    Font(MitrFont, fontProvider = provider, weight = FontWeight.Medium),
+    androidx.compose.ui.text.font.Font(resId = R.font.mitr_medium, weight = FontWeight.Medium),
+    Font(MitrFont, fontProvider = provider, weight = FontWeight.SemiBold),
+    androidx.compose.ui.text.font.Font(resId = R.font.mitr_semibold, weight = FontWeight.SemiBold),
+    Font(MitrFont, fontProvider = provider, weight = FontWeight.Bold),
+    androidx.compose.ui.text.font.Font(resId = R.font.mitr_semibold, weight = FontWeight.Bold),
+)
+
+val PiggyPigTypography = Typography(
     body1 = TextStyle(
-        fontFamily = FontFamily.Default,
+        fontFamily = MitrFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
-    )
-    /* Other default text styles to override
-    button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
-        fontSize = 14.sp
     ),
-    caption = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 12.sp
-    )
-    */
+    button = TextStyle(
+        fontFamily = MitrFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 40.sp
+    ),
+    h1 = TextStyle(
+        fontFamily = MitrFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 30.sp
+    ),
+    h2 = TextStyle(
+        fontFamily = MitrFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 25.sp
+    ),
+    h3 = TextStyle(
+        fontFamily = MitrFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 22.sp
+    ),
+    h4 = TextStyle(
+        fontFamily = MitrFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 20.sp
+    ),
 )

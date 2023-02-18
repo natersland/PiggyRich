@@ -9,7 +9,10 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.natersfantasy.piggyrichrpg.R
+import com.natersfantasy.piggyrichrpg.ui.theme.PiggyPigColor
 import com.natersfantasy.piggyrichrpg.ui.theme.PiggyRichRPGTheme
 
 class MainActivity : ComponentActivity() {
@@ -31,7 +34,11 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+    Text(
+        text = stringResource(id = R.string.user_detail_about_me),
+        color = PiggyPigColor.Frog,
+        style = MaterialTheme.typography.h1
+    )
 }
 
 @Preview(showBackground = true)

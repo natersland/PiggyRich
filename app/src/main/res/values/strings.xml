@@ -2,8 +2,8 @@
     <string name="app_name" translatable="false">Piggy Rich</string>
     <string name="user_detail_about_me">เกี่ยวกับฉัน</string>
     <string name="user_detail_nickname">ชื่อเล่น</string>
-    <string name="user_detail_nickname">ตอนนี้มีเงินเก็บเท่าไหร่?</string>
-    <string name="user_detail_nickname">ถัดไป</string>
+    <string name="user_detail_how_much_your_saving_now">ตอนนี้มีเงินเก็บเท่าไหร่?</string>
+    <string name="user_detail_next_button">ถัดไป</string>
 
     <string name="user_result_you_are_level">คุณคือนักเก็บเงิน</string>
     <string name="user_result_user_level" translatable="false">Level %s</string>
@@ -36,7 +36,7 @@
     <string name="challenge_level_4" translatable="false">4</string>
     <string name="challenge_times">ครั้ง</string>
     <string name="challenge_total">รวมเป็นเงิน</string>
-    
+
     <string name="badge_current_saving_text">เก็บเงินได้ทั้งหมด</string>
     <string name="badge_current_saving_money" translatable="false">%s / %s</string>
     <string name="badge_badge_text">เหรียญรางวัล</string>
