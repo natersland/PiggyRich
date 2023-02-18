@@ -43,7 +43,7 @@ Features
 - [ ] I have checked that the code run smoothly on Android devices
 - [ ] I have checked the format & indentation
 - [ ] I have removed all logs
-- [ ] I have made presentation for demo app
+- [ ] I have made presentation for demo app: https://www.canva.com/design/DAFa7eaO2VI/g8gy7APXHLF6AKGDaYJp0w/view?utm_content=DAFa7eaO2VI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
 
 ## Contributor
 Akira Chenyavanij
