@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">PiggyRich (Native Android)</h1>
 
-> **Current version: In developing (30% of 100%)**
+> **Current version: In developing (40% of 100%)**
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -29,7 +29,7 @@ Features
 - [x] 20% - UX & UI Design: https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-id=0%3A1&t=QPZ5B0ve84NlezL5-1
 - [x] 25% - List all stack
 - [x] 30% - Setup project
-- [ ] 40% - Setup theme and color
+- [x] 40% - Setup theme and color
 - [ ] 50% - User can open app and see spashscreen -> user detail screen -> User level result screen
 - [ ] 55% - User can see home Screen with leveling system display
 - [ ] 65% - User can see current and all challenges list.
