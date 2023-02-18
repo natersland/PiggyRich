@@ -17,10 +17,10 @@ fun Navigation() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "SplashScreen") {
         composable(route = "SplashScreen") {
-            SplashScreen()
+            SplashScreen(navController)
         }
         composable(route = "UserDetail") {
-            UserDetailScreen()
+            UserDetailScreen(navController)
         }
         composable(route = "UserResult") {}
         composable(route = "Home") {}

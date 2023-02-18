@@ -1,5 +1,6 @@
 package com.natersfantasy.piggyrichrpg.ui.theme
 
+import android.content.res.Resources
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.TextStyle
@@ -24,21 +25,23 @@ val MitrFont = GoogleFont(name = "Mitr")
 @OptIn(ExperimentalTextApi::class)
 val PoppinsFont = GoogleFont(name = "Poppins")
 
-@OptIn(ExperimentalTextApi::class)
-val PoppinsFontFamily = FontFamily(
-    Font(PoppinsFont, fontProvider = provider),
-    androidx.compose.ui.text.font.Font(resId = R.font.poppins_regular),
-    Font(PoppinsFont, fontProvider = provider, weight = FontWeight.Medium),
-    androidx.compose.ui.text.font.Font(resId = R.font.poppins_medium, weight = FontWeight.Medium),
-    Font(PoppinsFont, fontProvider = provider, weight = FontWeight.SemiBold),
-    androidx.compose.ui.text.font.Font(
-        resId = R.font.poppins_semibold,
-        weight = FontWeight.SemiBold
-    ),
-    Font(PoppinsFont, fontProvider = provider, weight = FontWeight.Bold),
-    androidx.compose.ui.text.font.Font(resId = R.font.poppins_bold, weight = FontWeight.Bold),
-)
+// English Font
+//@OptIn(ExperimentalTextApi::class)
+//val PoppinsFontFamily = FontFamily(
+//    Font(PoppinsFont, fontProvider = provider),
+//    androidx.compose.ui.text.font.Font(resId = R.font.poppins_regular),
+//    Font(PoppinsFont, fontProvider = provider, weight = FontWeight.Medium),
+//    androidx.compose.ui.text.font.Font(resId = R.font.poppins_medium, weight = FontWeight.Medium),
+//    Font(PoppinsFont, fontProvider = provider, weight = FontWeight.SemiBold),
+//    androidx.compose.ui.text.font.Font(
+//        resId = R.font.poppins_semibold,
+//        weight = FontWeight.SemiBold
+//    ),
+//    Font(PoppinsFont, fontProvider = provider, weight = FontWeight.Bold),
+//    androidx.compose.ui.text.font.Font(resId = R.font.poppins_bold, weight = FontWeight.Bold),
+//)
 
+// Thai Font
 @OptIn(ExperimentalTextApi::class)
 val MitrFontFamily = FontFamily(
     Font(MitrFont, fontProvider = provider),
@@ -50,55 +53,43 @@ val MitrFontFamily = FontFamily(
     Font(MitrFont, fontProvider = provider, weight = FontWeight.Bold),
     androidx.compose.ui.text.font.Font(resId = R.font.mitr_semibold, weight = FontWeight.Bold),
 )
-val userLanguage = Locale.getDefault().getDisplayLanguage();
+val userLanguage = Resources.getSystem().getConfiguration().locale.displayLanguage;
 
 val PiggyPigTypography = Typography(
     body1 = TextStyle(
-        fontFamily = when (userLanguage) {
-            "th" -> MitrFontFamily
-            else -> PoppinsFontFamily
-        },
+        fontFamily = MitrFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
+        fontSize = 16.sp,
+        letterSpacing = 1.sp
     ),
     button = TextStyle(
-        fontFamily = when (userLanguage) {
-            "th" -> MitrFontFamily
-            else -> PoppinsFontFamily
-        },
+        fontFamily = MitrFontFamily,
         fontWeight = FontWeight.SemiBold,
-        fontSize = 40.sp
+        fontSize = 40.sp,
+        letterSpacing = 1.sp
     ),
     h1 = TextStyle(
-        fontFamily = when (userLanguage) {
-            "th" -> MitrFontFamily
-            else -> PoppinsFontFamily
-        },
-        fontWeight = FontWeight.Bold,
-        fontSize = 30.sp
+        fontFamily = MitrFontFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 40.sp,
+        letterSpacing = 1.sp
     ),
     h2 = TextStyle(
-        fontFamily = when (userLanguage) {
-            "th" -> MitrFontFamily
-            else -> PoppinsFontFamily
-        },
-        fontWeight = FontWeight.Bold,
-        fontSize = 25.sp
+        fontFamily = MitrFontFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 25.sp,
+        letterSpacing = 1.sp
     ),
     h3 = TextStyle(
-        fontFamily = when (userLanguage) {
-            "th" -> MitrFontFamily
-            else -> PoppinsFontFamily
-        },
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 22.sp
+        fontFamily = MitrFontFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 22.sp,
+        letterSpacing = 1.sp
     ),
     h4 = TextStyle(
-        fontFamily = when (userLanguage) {
-            "th" -> MitrFontFamily
-            else -> PoppinsFontFamily
-        },
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 20.sp
+        fontFamily = MitrFontFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 20.sp,
+        letterSpacing = 1.sp
     ),
 )

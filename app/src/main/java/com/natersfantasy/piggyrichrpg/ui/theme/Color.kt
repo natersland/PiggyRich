@@ -16,6 +16,7 @@ object PiggyPigColor {
 
     val GiraffeYellowText = Color(0xFFFFC265)
     val GiraffeBrownText = Color(0xFFAD5E2F)
-    val GrayText = Color(0xFF818181)
+    val Gray818181 = Color(0xFF818181)
+    val GrayE5E5E5 = Color(0xFFE5E5E5)
 }
 
