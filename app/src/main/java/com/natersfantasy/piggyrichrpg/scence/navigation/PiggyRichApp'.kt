@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.natersfantasy.piggyrichrpg.scence.splashscreen.SplashScreen
+import com.natersfantasy.piggyrichrpg.scence.userdetail.UserDetailScreen
 
 @Composable
 fun PiggyPigApp() {
@@ -18,7 +19,9 @@ fun Navigation() {
         composable(route = "SplashScreen") {
             SplashScreen()
         }
-        composable(route = "UserDetail") {}
+        composable(route = "UserDetail") {
+            UserDetailScreen()
+        }
         composable(route = "UserResult") {}
         composable(route = "Home") {}
         composable(route = "Level1Challenge") {}
