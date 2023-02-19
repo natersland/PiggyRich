@@ -1,4 +1,4 @@
-package com.natersfantasy.piggyrichrpg.scence
+package com.natersfantasy.piggyrichrpg.presentation
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

@@ -1,4 +1,4 @@
-package com.natersfantasy.piggyrichrpg.scence.userdetail
+package com.natersfantasy.piggyrichrpg.presentation.newmember
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
@@ -14,17 +14,33 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.natersfantasy.piggyrichrpg.R
 import com.natersfantasy.piggyrichrpg.commons.components.PiggyPigRoundedButton
-import com.natersfantasy.piggyrichrpg.scence.userdetail.data.Name
-import com.natersfantasy.piggyrichrpg.scence.userdetail.data.nameList
 import com.natersfantasy.piggyrichrpg.ui.theme.*
-import kotlin.random.Random
+import com.natersfantasy.piggyrichrpg.util.UiEvent
 
 @Composable
-internal fun UserDetailScreen(navController: NavController) {
+internal fun NewMemberScreen(
+    onPopBackStack: () -> Unit,
+    viewModel: NewMemberViewModel = hiltViewModel()
+) {
+    val scaffoldState = rememberScaffoldState()
+    LaunchedEffect(key1 = true) {
+        viewModel.uiEvent.collect { event ->
+            when (event) {
+                is UiEvent.PopBackStack -> onPopBackStack()
+                is UiEvent.ShowSnackbar -> {
+                    scaffoldState.snackbarHostState.showSnackbar(
+                        message = event.message,
+                        actionLabel = event.action
+                    )
+                }
+                else -> Unit
+            }
+        }
+    }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -35,19 +51,18 @@ internal fun UserDetailScreen(navController: NavController) {
                 .padding(start = 32.dp, end = 32.dp, bottom = 300.dp)
                 .align(Alignment.Center)
         ) {
-//            AboutMeText()
-            UserDetailForm()
+            UserDetailForm(viewModel)
         }
         Box(modifier = Modifier.align(Alignment.BottomCenter)) {
             AppBottomWave()
             TextButton(
-                onClick = { navController.navigate("Home") },
+                onClick = { viewModel.onEvent(NewMemberEvent.OnStartClick) },
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
                     .padding(end = 32.dp, bottom = 32.dp)
             ) {
                 Text(
-                    text = stringResource(id = R.string.user_detail_next_button),
+                    text = stringResource(id = R.string.new_member_next_button),
                     style = PiggyPigTypography.h2,
                     color = Color.White,
                     modifier = Modifier.padding(end = 8.dp)
@@ -62,9 +77,7 @@ internal fun UserDetailScreen(navController: NavController) {
 }
 
 @Composable
-private fun UserDetailForm() {
-    val (userName, setUsername) = remember { mutableStateOf("") }
-
+private fun UserDetailForm(viewModel: NewMemberViewModel) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -75,16 +88,16 @@ private fun UserDetailForm() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = stringResource(id = R.string.user_detail_myname),
+                text = stringResource(id = R.string.new_member_myname),
                 style = PiggyPigTypography.h1,
                 color = PiggyPigColor.GiraffeYellowText,
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center
             )
-            FormTextField(userName, setUsername)
+            FormTextField(viewModel)
             PiggyPigRoundedButton(
-                onClick = { clickRandom(setUsername) },
-                text = stringResource(id = R.string.user_detail_random),
+                onClick = { viewModel.onEvent(NewMemberEvent.OnRandomClick) },
+                text = stringResource(id = R.string.new_member_random),
                 btnColor = PiggyPigColor.Lobster,
                 enabled = true,
                 modifier = Modifier.padding(top = 8.dp)
@@ -94,17 +107,18 @@ private fun UserDetailForm() {
 }
 
 @Composable
-private fun FormTextField(userName: String, setUsername: (String) -> Unit) {
+private fun FormTextField(viewModel: NewMemberViewModel) {
     val context = LocalContext.current
     val maxChar = 15
+    val userNameLength = viewModel.userName.length
 
     OutlinedTextField(
-        value = userName,
+        value = viewModel.userName,
         onValueChange = { inputName ->
             if (inputName.length <= maxChar) {
-                setUsername(inputName)
+                viewModel.onEvent(NewMemberEvent.OnUserNameChange(inputName))
             } else {
-                Toast.makeText(context, R.string.user_detail_char_limit, Toast.LENGTH_LONG).show()
+                Toast.makeText(context, R.string.new_member_char_limit, Toast.LENGTH_LONG).show()
             }
         },
         modifier = Modifier
@@ -122,28 +136,15 @@ private fun FormTextField(userName: String, setUsername: (String) -> Unit) {
     )
     Text(
         text = stringResource(
-            id = R.string.user_detail_char_counter,
-            userName.length.toString(),
+            id = R.string.new_member_char_counter,
+            userNameLength.toString(),
             maxChar.toString()
-        ), style = PiggyPigTypography.body1, color = when(userName.length){
+        ), style = PiggyPigTypography.body1, color = when (userNameLength) {
             in 7..14 -> PiggyPigColor.Lobster
             15 -> Color.Red
             else -> PiggyPigColor.Gray818181
-        })
-}
-
-private fun generateRandomName(nameList: List<Name>): String {
-    val random = Random.Default
-    val randomIndex = random.nextInt(nameList.size)
-    return when (userDisplayLanguage.language) {
-        "th" -> nameList[randomIndex].thaiName
-        else -> nameList[randomIndex].engName
-    }
-}
-
-private fun clickRandom(setUsername: (String) -> Unit) {
-    val result = generateRandomName(nameList = nameList)
-    setUsername(result)
+        }
+    )
 }
 
 @Composable
@@ -157,8 +158,6 @@ private fun AppBottomWave() {
 
 @Preview(showBackground = true, locale = "th")
 @Composable
-fun SplashScreenPreview() {
-    PiggyRichRPGTheme() {
-        UserDetailScreen(rememberNavController())
-    }
+fun NewMemberScreenPreview() {
+
 }

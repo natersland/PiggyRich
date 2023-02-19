@@ -1,8 +1,7 @@
-package com.natersfantasy.piggyrichrpg.tools.di
+package com.natersfantasy.piggyrichrpg.util.di
 
 import android.app.Application
 import androidx.room.Room
-import com.natersfantasy.piggyrichrpg.data.user.User
 import com.natersfantasy.piggyrichrpg.data.user.UserDatabase
 import com.natersfantasy.piggyrichrpg.data.user.UserRepository
 import com.natersfantasy.piggyrichrpg.data.user.UserRepositoryImpl

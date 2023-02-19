@@ -1,4 +1,4 @@
-package com.natersfantasy.piggyrichrpg.scence.splashscreen
+package com.natersfantasy.piggyrichrpg.presentation.splashscreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*

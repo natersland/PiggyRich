@@ -1,4 +1,4 @@
-package com.natersfantasy.piggyrichrpg.scence.userdetail.data
+package com.natersfantasy.piggyrichrpg.data.username
 
 val nameList = listOf(
     Name("แมวอ้วน", "ChubbyCat"),

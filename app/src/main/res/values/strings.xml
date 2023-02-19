@@ -1,13 +1,12 @@
 <resources>
     <string name="app_name" translatable="false">Piggy Rich</string>
-    <string name="user_detail_about_me">เกี่ยวกับฉัน</string>
-    <string name="user_detail_myname">ชื่อของฉัน</string>
-    <string name="user_detail_how_much_your_saving_now">ตอนนี้มีเงินเก็บเท่าไหร่? (บาท)</string>
-    <string name="user_detail_next_button">ถัดไป</string>
-    <string name="user_detail_random">สุ่ม</string>
-    <string name="user_detail_char_limit">ชื่อต้องไม่เกิน 15 ตัวอักษร</string>
-    <string name="user_detail_char_counter">จำนวนตัวอักษร %s / %s</string>
-
+    <string name="new_member_about_me">เกี่ยวกับฉัน</string>
+    <string name="new_member_myname">ชื่อของฉัน</string>
+    <string name="new_member_how_much_your_saving_now">ตอนนี้มีเงินเก็บเท่าไหร่? (บาท)</string>
+    <string name="new_member_next_button">ถัดไป</string>
+    <string name="new_member_random">สุ่ม</string>
+    <string name="new_member_char_limit">ชื่อต้องไม่เกิน 15 ตัวอักษร</string>
+    <string name="new_member_char_counter">จำนวนตัวอักษร %s / %s</string>
 
     <string name="user_result_you_are_level">คุณคือนักเก็บเงิน</string>
     <string name="user_result_user_level" translatable="false">Level %s</string>
