@@ -36,7 +36,7 @@ So what are you waiting for? Join our PiggyRich now and start saving money like 
 ## Developing Task
 - [x] 5% - POC about Showkase
 - [x] 10% - POC about Paparazzi
-- [x] 20% - UX & UI Design: https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-id=0%3A1&t=QPZ5B0ve84NlezL5-1
+- [x] 20% - UX & UI Design: <a href="https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-id=0%3A1&t=QPZ5B0ve84NlezL5-1">Figma</a>
 - [x] 25% - List all stack
 - [x] 30% - Setup project
 - [x] 40% - Setup theme and color
@@ -53,7 +53,7 @@ So what are you waiting for? Join our PiggyRich now and start saving money like 
 - [ ] I have checked that the code run smoothly on Android devices
 - [ ] I have checked the format & indentation
 - [ ] I have removed all logs
-- [ ] I have made presentation for demo app: https://www.canva.com/design/DAFa7eaO2VI/g8gy7APXHLF6AKGDaYJp0w/view?utm_content=DAFa7eaO2VI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+- [ ] I have made presentation for demo app: <a href="https://www.canva.com/design/DAFa7eaO2VI/g8gy7APXHLF6AKGDaYJp0w/view?utm_content=DAFa7eaO2VI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Presentation</a>
 
 ## Contributor
 🦙Akira Chenyavanij
