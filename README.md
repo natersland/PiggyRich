@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">PiggyRich (Native Android)</h1>
 
-> **Current version: In developing (40% of 100%)**
+> **Current version: In developing (50% of 100%)**
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -30,13 +30,13 @@ Features
 - [x] 25% - List all stack
 - [x] 30% - Setup project
 - [x] 40% - Setup theme and color
-- [ ] 50% - User can open app and see spashscreen -> user detail screen -> User level result screen
-- [ ] 55% - User can see home Screen with leveling system display
+- [x] 50% - User can open app and see SplashScreen -> NewMemberScreen
+- [ ] 55% - User can see HomeScreen with leveling system display
 - [ ] 65% - User can see current and all challenges list.
-- [ ] 70% - User can touch challenge card and go to challenge screen.
-- [ ] 80% - User can see all level in challenge screen and can finished saving task.
+- [ ] 70% - User can touch challenge card and go to ChallengeScreen.
+- [ ] 80% - User can see all level in ChallengeScreen and can finished saving task.
 - [ ] 90% - User can see current challenge challenge and after challenge finished the challenge must move to all challenge with verify icon
-- [ ] 100% - (Optional / v2) User can go to badge screen and see all badge
+- [ ] 100% - (Optional / v2) User can go to BadgeScreen and see all badge
 
 
 ## Todo
