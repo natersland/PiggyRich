@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">PiggyRich (Native Android)</h1>
 
-> **Current version: In developing (50% of 100%)**
+> **Current version: In developing (🟢🟢🟢🟢🟢⚪️⚪️⚪️⚪️⚪️ 50% of 100%)**
 
 PiggyRich is the savings app base on leveling system inspired by money saving challenge on the internet. This app will turn your boring money-saving into a hilarious adventure! My app is designed to make saving money a fun and exciting experience, with gamification at its core.
 
