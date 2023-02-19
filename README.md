@@ -5,12 +5,21 @@
 
 > **Current version: In developing (50% of 100%)**
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+PiggyRich is the savings app base on leveling system inspired by money saving challenge on the internet. This app will turn your boring money-saving into a hilarious adventure! My app is designed to make saving money a fun and exciting experience, with gamification at its core.
 
-Features
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit
+Imagine when you open PiggyRich and see cutieeee animal mascot base on your saving level, urging you to save more. As you go through your daily routine, you get rewarded with step forward to new challenge unlock for every action that saves you money, The more money you saving, the higher your level will be, and cutieeeee animal mascot will be yours!
 
-**Stack & Library I Used**:
+So what are you waiting for? Join our PiggyRich now and start saving money like a pro!
+
+**⭐️Features**
+- Gamified savings experience with cutie animal mascot.
+- Fun challenges that make saving money a fantasy experience.
+- Simple and easy-to-use interface for seamless user experience
+- Mascot collection book to track and collect all the cute animal characters in the app
+- Savings tips and financial advice to help you achieve your goals (v2.0)
+- Support for both Thai and English languages, with seamless language switching (v.2.0)
+
+**🚀Stack & Library I Used**:
 - Android Development (Kotlin)
 - Architecture: MVVM
 - Design Tool: Figma
@@ -47,6 +56,7 @@ Features
 - [ ] I have made presentation for demo app: https://www.canva.com/design/DAFa7eaO2VI/g8gy7APXHLF6AKGDaYJp0w/view?utm_content=DAFa7eaO2VI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
 
 ## Contributor
-Akira Chenyavanij
+🦙Akira Chenyavanij
 - Android Developer
 - UX & UI Design
+- Project Planning
