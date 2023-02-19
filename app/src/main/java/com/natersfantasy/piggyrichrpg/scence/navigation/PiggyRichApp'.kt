@@ -22,7 +22,6 @@ fun Navigation() {
         composable(route = "UserDetail") {
             UserDetailScreen(navController)
         }
-        composable(route = "UserResult") {}
         composable(route = "Home") {}
         composable(route = "Level1Challenge") {}
         composable(route = "Level2Challenge") {}

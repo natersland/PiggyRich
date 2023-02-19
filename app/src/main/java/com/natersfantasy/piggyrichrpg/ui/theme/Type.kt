@@ -53,7 +53,7 @@ val MitrFontFamily = FontFamily(
     Font(MitrFont, fontProvider = provider, weight = FontWeight.Bold),
     androidx.compose.ui.text.font.Font(resId = R.font.mitr_semibold, weight = FontWeight.Bold),
 )
-val userLanguage = Resources.getSystem().getConfiguration().locale.displayLanguage;
+val userDisplayLanguage = Resources.getSystem().configuration.locale;
 
 val PiggyPigTypography = Typography(
     body1 = TextStyle(
@@ -64,8 +64,8 @@ val PiggyPigTypography = Typography(
     ),
     button = TextStyle(
         fontFamily = MitrFontFamily,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 40.sp,
+        fontWeight = FontWeight.Medium,
+        fontSize = 25.sp,
         letterSpacing = 1.sp
     ),
     h1 = TextStyle(
