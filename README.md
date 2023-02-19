@@ -13,8 +13,9 @@ Features
 **Stack & Library I Used**:
 - Android Development (Kotlin)
 - Architecture: MVVM
-- UI Toolkit: Jetpack Compose
 - Design Tool: Figma
+- UI Toolkit: Jetpack Compose
+- Dependencie Injection: Dagger Hilt
 - Database: Room
 - Other Library: 
   - Showkase: https://github.com/airbnb/Showkase
