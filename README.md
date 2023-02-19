@@ -17,7 +17,7 @@ So what are you waiting for? Join our PiggyRich now and start saving money like 
 - Simple and easy-to-use interface for seamless user experience
 - Mascot collection book to track and collect all the cute animal characters in the app
 - Savings tips and financial advice to help you achieve your goals (v2.0)
-- Support for both Thai and English languages, with seamless language switching (v.2.0)
+- Support for both Thai and English languages (v.2.0)
 
 **🚀Stack & Library I Used**:
 - Android Development (Kotlin)
