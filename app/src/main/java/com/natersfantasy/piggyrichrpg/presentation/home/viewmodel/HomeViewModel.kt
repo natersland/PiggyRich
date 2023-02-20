@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.natersfantasy.piggyrichrpg.data.user.User
 import com.natersfantasy.piggyrichrpg.data.user.UserRepository
+import com.natersfantasy.piggyrichrpg.ui.theme.PiggyRichColor
 import com.natersfantasy.piggyrichrpg.util.Routes
 import com.natersfantasy.piggyrichrpg.util.UiEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,7 +19,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     val repository: UserRepository
-): ViewModel() {
+) : ViewModel() {
 
     var user by mutableStateOf<User?>(null)
         private set
@@ -27,23 +28,39 @@ class HomeViewModel @Inject constructor(
         private set
 
     var userLevel by mutableStateOf(0)
+        private set
 
     var savingAmount by mutableStateOf(0)
+        private set
+
+    var userBgColor by mutableStateOf(PiggyRichColor.Chicken)
+        private set
+
+    var userMascot by mutableStateOf(R.drawable.char_chicken)
         private set
 
     private val _uiEvent = Channel<UiEvent>()
     val uiEvent = _uiEvent.receiveAsFlow()
 
-    fun onEvent(event: HomeEvent) {
-        when(event) {
+    suspend fun onEvent(event: HomeEvent) {
+        // TODO fetch user data from local
+        when (event) {
             is HomeEvent.OnGetUserName -> {
                 userName = event.name
             }
             is HomeEvent.OnGetUserLevel -> {
                 userLevel = event.level
             }
+            is HomeEvent.OnHandleColorBgLevel -> {
+                val result = handleBgColorLevel(user?.level)
+                userBgColor = result
+            }
+            is HomeEvent.OnHandleMascotLevel -> {
+                val result = handleMascotLevel(user?.level)
+                userMascot = result
+            }
             is HomeEvent.OnSavingAmountChange -> {
-                savingAmount = event.money
+                savingAmount = user?.savingMoney.let { savingAmount }
             }
             is HomeEvent.OnBadgeClick -> {
                 sendUiEvent(UiEvent.Navigate(Routes.BADGE))
@@ -56,6 +73,34 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
+
+    private fun handleBgColorLevel(level: Int?): androidx.compose.ui.graphics.Color {
+        return when (level) {
+            1 -> PiggyRichColor.Chicken
+            2 -> PiggyRichColor.Giraffe
+            3 -> PiggyRichColor.Lobster
+            4 -> PiggyRichColor.Frog
+            5 -> PiggyRichColor.Dolphin
+            6 -> PiggyRichColor.Cat
+            else -> {
+                PiggyRichColor.Chicken
+            }
+        }
+    }
+    private fun handleMascotLevel(level: Int?):Int {
+        return when(level) {
+            1 -> R.drawable.char_chicken
+            2 -> R.drawable.char_giraffe
+            3 -> R.drawable.char_lobster
+            4 -> R.drawable.char_frog
+            5 -> R.drawable.char_dolphin
+            6 -> R.drawable.char_cat
+            else -> {
+                R.drawable.char_chicken
+            }
+        }
+    }
+
     private fun sendUiEvent(event: UiEvent) {
         viewModelScope.launch {
             _uiEvent.send(event)
