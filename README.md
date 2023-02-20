@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">PiggyRich (Native Android)</h1>
 
-> **Current version: In developing (🟢🟢🟢🟢🟢⚪️⚪️⚪️⚪️⚪️ 50% of 100%)**
+> **Current version: In developing (🟢🟢🟢🟢⚪️⚪️⚪️⚪️⚪️⚪️ 45% of 100%)**
 
 PiggyRich is the savings app base on leveling system inspired by money saving challenge on the internet. This app will turn your boring money-saving into a hilarious adventure! My app is designed to make saving money a fun and exciting experience, with gamification at its core.
 
@@ -40,10 +40,10 @@ So what are you waiting for? Join our PiggyRich now and start saving money like 
 - [x] 20% - UX & UI Design: <a href="https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-id=0%3A1&t=QPZ5B0ve84NlezL5-1">Figma</a>
 - [x] 25% - List all stack
 - [x] 30% - Setup project
-- [x] 40% - Setup theme and color
-- [x] 50% - User can open app and see SplashScreen -> NewMemberScreen
+- [x] 35% - Setup theme and color
+- [x] 45% - User can open app and see SplashScreen -> NewMemberScreen with create new character
 - [ ] 55% - User can see HomeScreen with leveling system display
-- [ ] 65% - User can see current and all challenges list.
+- [ ] 60% - User can see current and all challenges list.
 - [ ] 70% - User can touch challenge card and go to ChallengeScreen.
 - [ ] 80% - User can see all level in ChallengeScreen and can finished saving task.
 - [ ] 90% - User can see current challenge challenge and after challenge finished the challenge must move to all challenge with verify icon
