@@ -40,6 +40,9 @@ internal fun HomeScreen(
 
 @Composable
 fun HomeHeader(viewModel: HomeViewModel) {
+    val userLevel = viewModel.userLevel.toString()
+    val userName = viewModel.userName
+
     Box(modifier = Modifier.fillMaxWidth()) {
         val userColor = viewModel.userBgColor
         Card(backgroundColor = userColor, modifier = Modifier.fillMaxWidth()) {
@@ -50,9 +53,9 @@ fun HomeHeader(viewModel: HomeViewModel) {
                         painter = painterResource(id = R.drawable.star),
                         contentDescription = "Go to Badge Screen"
                     )
-                    Text(text = "Level 1")
+                    Text(text = userLevel)
                 }
-                Text(text = "UserName")
+                Text(text = userName)
             }
         }
 
