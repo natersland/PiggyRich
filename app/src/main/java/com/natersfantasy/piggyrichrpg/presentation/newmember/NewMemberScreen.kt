@@ -25,6 +25,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.airbnb.android.showkase.models.Showkase
 import com.natersfantasy.piggyrichrpg.R
 import com.natersfantasy.piggyrichrpg.commons.components.PiggyPigRoundedButton
+import com.natersfantasy.piggyrichrpg.presentation.newmember.viewmodel.NewMemberEvent
+import com.natersfantasy.piggyrichrpg.presentation.newmember.viewmodel.NewMemberViewModel
 import com.natersfantasy.piggyrichrpg.ui.theme.*
 import com.natersfantasy.piggyrichrpg.util.UiEvent
 import com.natersfantasy.piggyrichrpg.util.screenshot.getBrowserIntent

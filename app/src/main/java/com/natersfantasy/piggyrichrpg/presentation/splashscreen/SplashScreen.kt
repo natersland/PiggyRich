@@ -15,6 +15,8 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.airbnb.android.showkase.annotation.ShowkaseComposable
 import com.natersfantasy.piggyrichrpg.R
+import com.natersfantasy.piggyrichrpg.presentation.splashscreen.viewmodel.SplashScreenEvent
+import com.natersfantasy.piggyrichrpg.presentation.splashscreen.viewmodel.SplashScreenViewModel
 import com.natersfantasy.piggyrichrpg.ui.theme.MitrFontFamily
 import com.natersfantasy.piggyrichrpg.ui.theme.PiggyRichColor
 import com.natersfantasy.piggyrichrpg.util.UiEvent

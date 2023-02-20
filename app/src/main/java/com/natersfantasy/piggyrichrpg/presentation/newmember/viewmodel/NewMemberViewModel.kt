@@ -1,9 +1,8 @@
-package com.natersfantasy.piggyrichrpg.presentation.newmember
+package com.natersfantasy.piggyrichrpg.presentation.newmember.viewmodel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.natersfantasy.piggyrichrpg.data.user.User

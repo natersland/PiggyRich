@@ -1,7 +1,8 @@
-package com.natersfantasy.piggyrichrpg.presentation.splashscreen
+package com.natersfantasy.piggyrichrpg.presentation.splashscreen.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.natersfantasy.piggyrichrpg.presentation.splashscreen.viewmodel.SplashScreenEvent
 import com.natersfantasy.piggyrichrpg.util.Routes
 import com.natersfantasy.piggyrichrpg.util.UiEvent
 import kotlinx.coroutines.channels.Channel

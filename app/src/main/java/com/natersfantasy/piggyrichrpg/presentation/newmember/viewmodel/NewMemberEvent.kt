@@ -1,4 +1,4 @@
-package com.natersfantasy.piggyrichrpg.presentation.newmember
+package com.natersfantasy.piggyrichrpg.presentation.newmember.viewmodel
 
 sealed class NewMemberEvent {
     data class OnUserNameChange(val name: String) : NewMemberEvent()
