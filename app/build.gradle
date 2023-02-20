@@ -96,9 +96,10 @@ dependencies {
     implementation "androidx.room:room-ktx:2.5.0"
     androidTestImplementation "androidx.room:room-testing:2.5.0"
 
-    // Showkase
-    implementation "com.airbnb.android:showkase:1.0.0-beta17"
-    kapt "com.airbnb.android:showkase-processor:1.0.0-beta17"
+    // Showkase #1
+    def showkase_version = "1.0.0-beta17"
+    implementation "com.airbnb.android:showkase:$showkase_version"
+    kapt "com.airbnb.android:showkase-processor:$showkase_version"
 
     // Paparazzi
 }

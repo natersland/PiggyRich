@@ -14,7 +14,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.natersfantasy.piggyrichrpg.R
-import com.natersfantasy.piggyrichrpg.ui.theme.PiggyPigColor
+import com.natersfantasy.piggyrichrpg.ui.theme.PiggyRichColor
 import com.natersfantasy.piggyrichrpg.ui.theme.PiggyRichRPGTheme
 
 @Composable
@@ -40,7 +40,7 @@ fun PiggyPigRoundedButton(
                 .padding(horizontal = 18.dp, vertical = 4.dp),
             textAlign = TextAlign.Center,
             color = when(btnColor) {
-                Color.White -> PiggyPigColor.Gray818181
+                Color.White -> PiggyRichColor.Gray818181
                 else -> Color.White
             }
         )
@@ -56,7 +56,7 @@ fun RoundedButtonPreview() {
         PiggyPigRoundedButton(
             onClick = {},
             text = stringResource(id = R.string.user_result_start),
-            btnColor = PiggyPigColor.Lobster,
+            btnColor = PiggyRichColor.Lobster,
             enabled = true,
             modifier = Modifier.fillMaxWidth()
         )

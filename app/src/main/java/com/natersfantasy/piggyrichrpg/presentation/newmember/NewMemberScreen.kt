@@ -1,6 +1,12 @@
 package com.natersfantasy.piggyrichrpg.presentation.newmember
 
+import android.content.Context
+import android.content.Intent
 import android.widget.Toast
+import androidx.activity.compose.ManagedActivityResultLauncher
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -12,34 +18,35 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.airbnb.android.showkase.models.Showkase
 import com.natersfantasy.piggyrichrpg.R
 import com.natersfantasy.piggyrichrpg.commons.components.PiggyPigRoundedButton
 import com.natersfantasy.piggyrichrpg.ui.theme.*
 import com.natersfantasy.piggyrichrpg.util.UiEvent
+import com.natersfantasy.piggyrichrpg.util.screenshot.getBrowserIntent
 
 @Composable
 internal fun NewMemberScreen(
     onPopBackStack: () -> Unit,
     viewModel: NewMemberViewModel = hiltViewModel()
 ) {
-    val scaffoldState = rememberScaffoldState()
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
                 is UiEvent.PopBackStack -> onPopBackStack()
-                is UiEvent.ShowSnackbar -> {
-                    scaffoldState.snackbarHostState.showSnackbar(
-                        message = event.message,
-                        actionLabel = event.action
-                    )
-                }
                 else -> Unit
             }
         }
     }
+
+    val context = LocalContext.current
+    val launcher = rememberLauncherForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { _ -> /* Handle activity result if needed */ }
 
     Box(
         modifier = Modifier
@@ -51,7 +58,7 @@ internal fun NewMemberScreen(
                 .padding(start = 32.dp, end = 32.dp, bottom = 300.dp)
                 .align(Alignment.Center)
         ) {
-            UserDetailForm(viewModel)
+            NewMemberForm(viewModel, context, launcher)
         }
         Box(modifier = Modifier.align(Alignment.BottomCenter)) {
             AppBottomWave()
@@ -61,8 +68,9 @@ internal fun NewMemberScreen(
                     .align(Alignment.BottomEnd)
                     .padding(end = 32.dp, bottom = 32.dp)
             ) {
+
                 Text(
-                    text = stringResource(id = R.string.new_member_next_button),
+                    text = stringResource(id = R.string.user_result_start),
                     style = PiggyPigTypography.h2,
                     color = Color.White,
                     modifier = Modifier.padding(end = 8.dp)
@@ -77,7 +85,11 @@ internal fun NewMemberScreen(
 }
 
 @Composable
-private fun UserDetailForm(viewModel: NewMemberViewModel) {
+fun NewMemberForm(
+    viewModel: NewMemberViewModel,
+    context: Context,
+    launcher: ManagedActivityResultLauncher<Intent, ActivityResult>
+) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -90,7 +102,7 @@ private fun UserDetailForm(viewModel: NewMemberViewModel) {
             Text(
                 text = stringResource(id = R.string.new_member_myname),
                 style = PiggyPigTypography.h1,
-                color = PiggyPigColor.GiraffeYellowText,
+                color = PiggyRichColor.GiraffeYellowText,
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center
             )
@@ -98,16 +110,29 @@ private fun UserDetailForm(viewModel: NewMemberViewModel) {
             PiggyPigRoundedButton(
                 onClick = { viewModel.onEvent(NewMemberEvent.OnRandomClick) },
                 text = stringResource(id = R.string.new_member_random),
-                btnColor = PiggyPigColor.Lobster,
+                btnColor = PiggyRichColor.Lobster,
                 enabled = true,
                 modifier = Modifier.padding(top = 8.dp)
             )
+            TextButton(
+                onClick = {
+                    val intent = Showkase.getBrowserIntent(context)
+                    launcher.launch(intent)
+                },
+            ) {
+                // Showkase #4
+                Text(
+                    text = "Open Showkase Ja",
+                    style = PiggyPigTypography.body1,
+                    color = PiggyRichColor.GiraffeBrownText, textDecoration = TextDecoration.Underline
+                )
+            }
         }
     }
 }
 
 @Composable
-private fun FormTextField(viewModel: NewMemberViewModel) {
+fun FormTextField(viewModel: NewMemberViewModel) {
     val context = LocalContext.current
     val maxChar = 15
     val userNameLength = viewModel.userName.length
@@ -127,9 +152,9 @@ private fun FormTextField(viewModel: NewMemberViewModel) {
         shape = Shapes.small,
         colors = TextFieldDefaults.outlinedTextFieldColors(
             backgroundColor = Color.White,
-            focusedBorderColor = PiggyPigColor.GrayE5E5E5,
-            unfocusedBorderColor = PiggyPigColor.GrayE5E5E5,
-            textColor = PiggyPigColor.Gray818181
+            focusedBorderColor = PiggyRichColor.GrayE5E5E5,
+            unfocusedBorderColor = PiggyRichColor.GrayE5E5E5,
+            textColor = PiggyRichColor.Gray818181
         ),
         textStyle = PiggyPigTypography.h3,
         singleLine = true,
@@ -140,15 +165,16 @@ private fun FormTextField(viewModel: NewMemberViewModel) {
             userNameLength.toString(),
             maxChar.toString()
         ), style = PiggyPigTypography.body1, color = when (userNameLength) {
-            in 7..14 -> PiggyPigColor.Lobster
+            in 7..14 -> PiggyRichColor.Lobster
             15 -> Color.Red
-            else -> PiggyPigColor.Gray818181
+            else -> PiggyRichColor.Gray818181
         }
     )
 }
 
+@Preview(name = "AppBottomWave", group = "NewMemberScreen")
 @Composable
-private fun AppBottomWave() {
+fun AppBottomWave() {
     Image(
         painter = painterResource(id = R.drawable.formwave),
         contentDescription = "formwave",
@@ -156,8 +182,8 @@ private fun AppBottomWave() {
     )
 }
 
-@Preview(showBackground = true, locale = "th")
+//@Preview(name = "New member Screen", group = "New Member")
 @Composable
 fun NewMemberScreenPreview() {
-
+    NewMemberScreen(onPopBackStack = {})
 }

@@ -9,6 +9,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.googlefonts.Font
 import androidx.compose.ui.text.googlefonts.GoogleFont
 import androidx.compose.ui.unit.sp
+import com.airbnb.android.showkase.annotation.ShowkaseColor
+import com.airbnb.android.showkase.annotation.ShowkaseTypography
 import com.natersfantasy.piggyrichrpg.R
 import java.util.*
 
@@ -55,6 +57,7 @@ val MitrFontFamily = FontFamily(
 )
 val userDisplayLanguage = Resources.getSystem().configuration.locale;
 
+
 val PiggyPigTypography = Typography(
     body1 = TextStyle(
         fontFamily = MitrFontFamily,
@@ -92,4 +95,48 @@ val PiggyPigTypography = Typography(
         fontSize = 20.sp,
         letterSpacing = 1.sp
     ),
+)
+
+// Showkase #2.2
+@ShowkaseTypography(name = "body 1", group = "PiggyRich Font")
+val body1 = TextStyle(
+    fontFamily = MitrFontFamily,
+    fontWeight = FontWeight.Normal,
+    fontSize = 16.sp,
+    letterSpacing = 1.sp
+)
+@ShowkaseTypography(name = "button", group = "PiggyRich Font")
+val button = TextStyle(
+fontFamily = MitrFontFamily,
+fontWeight = FontWeight.Medium,
+fontSize = 25.sp,
+letterSpacing = 1.sp
+)
+@ShowkaseTypography(name = "h1", group = "PiggyRich Font")
+val h1 = TextStyle(
+fontFamily = MitrFontFamily,
+fontWeight = FontWeight.Medium,
+fontSize = 40.sp,
+letterSpacing = 1.sp
+)
+@ShowkaseTypography(name = "h2", group = "PiggyRich Font")
+val h2 = TextStyle(
+fontFamily = MitrFontFamily,
+fontWeight = FontWeight.Medium,
+fontSize = 25.sp,
+letterSpacing = 1.sp
+)
+@ShowkaseTypography(name = "h3", group = "PiggyRich Font")
+val h3 = TextStyle(
+fontFamily = MitrFontFamily,
+fontWeight = FontWeight.Medium,
+fontSize = 22.sp,
+letterSpacing = 1.sp
+)
+@ShowkaseTypography(name = "h4", group = "PiggyRich Font")
+val h4 = TextStyle(
+fontFamily = MitrFontFamily,
+fontWeight = FontWeight.Medium,
+fontSize = 20.sp,
+letterSpacing = 1.sp
 )

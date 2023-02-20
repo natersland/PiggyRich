@@ -8,17 +8,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
-    primary = PiggyPigColor.Giraffe,
-    primaryVariant = PiggyPigColor.Giraffe,
-    secondary = PiggyPigColor.GiraffePattern,
-    surface = PiggyPigColor.Gray818181,
-    background = PiggyPigColor.Gray818181,
+    primary = PiggyRichColor.Giraffe,
+    primaryVariant = PiggyRichColor.Giraffe,
+    secondary = PiggyRichColor.GiraffePattern,
+    surface = PiggyRichColor.Gray818181,
+    background = PiggyRichColor.Gray818181,
 )
 
 private val LightColorPalette = lightColors(
-    primary = PiggyPigColor.Giraffe,
-    primaryVariant = PiggyPigColor.Giraffe,
-    secondary = PiggyPigColor.GiraffePattern,
+    primary = PiggyRichColor.Giraffe,
+    primaryVariant = PiggyRichColor.Giraffe,
+    secondary = PiggyRichColor.GiraffePattern,
     surface = Color.White,
     background = Color.White,
 

@@ -15,9 +15,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.airbnb.android.showkase.annotation.ShowkaseComposable
 import com.natersfantasy.piggyrichrpg.R
 import com.natersfantasy.piggyrichrpg.ui.theme.MitrFontFamily
-import com.natersfantasy.piggyrichrpg.ui.theme.PiggyPigColor
+import com.natersfantasy.piggyrichrpg.ui.theme.PiggyRichColor
 import kotlinx.coroutines.delay
 
 @Composable
@@ -36,22 +37,24 @@ internal fun SplashScreen(navController: NavController) {
     }
 }
 
+@ShowkaseComposable(name = "AppName", group = "SplashScreen")
 @Composable
-private fun AppName() {
+fun AppName() {
     Box(modifier = Modifier.padding(bottom = 600.dp)) {
         Text(
             text = stringResource(id = R.string.app_name),
             fontFamily = MitrFontFamily,
             fontWeight = FontWeight.Medium,
             fontSize = 60.sp,
-            color = PiggyPigColor.GiraffeYellowText,
+            color = PiggyRichColor.GiraffeYellowText,
             letterSpacing = 1.sp
         )
     }
 }
 
+@ShowkaseComposable(name = "AppBottomWithMascot", group = "SplashScreen")
 @Composable
-private fun AppBottomWithMascot() {
+fun AppBottomWithMascot() {
     Image(
         painter = painterResource(id = R.drawable.spashscreenwave),
         contentDescription = "splashscreen",
@@ -69,7 +72,7 @@ private fun AppBottomWithMascot() {
     }
 }
 
-@Preview(showBackground = true, locale = "th")
+//@Preview(showBackground = true, locale = "th")
 @Composable
 fun SplashScreenPreview() {
     SplashScreen(rememberNavController())
