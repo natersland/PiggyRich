@@ -34,12 +34,14 @@ import com.natersfantasy.piggyrichrpg.util.screenshot.getBrowserIntent
 @Composable
 internal fun NewMemberScreen(
     onPopBackStack: () -> Unit,
-    viewModel: NewMemberViewModel = hiltViewModel()
-) {
+    viewModel: NewMemberViewModel = hiltViewModel(),
+    onNavigate: (UiEvent.Navigate) -> Unit,
+    ) {
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
                 is UiEvent.PopBackStack -> onPopBackStack()
+                is UiEvent.Navigate -> onNavigate(event)
                 else -> Unit
             }
         }
@@ -187,5 +189,5 @@ fun AppBottomWave() {
 //@Preview(name = "New member Screen", group = "New Member")
 @Composable
 fun NewMemberScreenPreview() {
-    NewMemberScreen(onPopBackStack = {})
+    NewMemberScreen(onPopBackStack = {}, onNavigate = {})
 }

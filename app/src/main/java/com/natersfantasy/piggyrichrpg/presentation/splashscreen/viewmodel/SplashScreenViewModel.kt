@@ -17,6 +17,7 @@ class SplashScreenViewModel @Inject constructor():ViewModel() {
     fun onEvent(event: SplashScreenEvent) {
         when(event) {
             is SplashScreenEvent.OnSplashScreenRun -> {
+                sendUiEvent(UiEvent.PopBackStack)
                 sendUiEvent(UiEvent.Navigate(Routes.NEW_MEMBER))
             }
         }

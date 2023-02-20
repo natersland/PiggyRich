@@ -23,6 +23,11 @@ class HomeViewModel @Inject constructor(
     var user by mutableStateOf<User?>(null)
         private set
 
+    var userName by mutableStateOf("")
+        private set
+
+    var userLevel by mutableStateOf(0)
+
     var savingAmount by mutableStateOf(0)
         private set
 
@@ -31,6 +36,12 @@ class HomeViewModel @Inject constructor(
 
     fun onEvent(event: HomeEvent) {
         when(event) {
+            is HomeEvent.OnGetUserName -> {
+                userName = event.name
+            }
+            is HomeEvent.OnGetUserLevel -> {
+                userLevel = event.level
+            }
             is HomeEvent.OnSavingAmountChange -> {
                 savingAmount = event.money
             }

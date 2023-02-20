@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.airbnb.android.showkase.models.Showkase
+import com.natersfantasy.piggyrichrpg.presentation.home.HomeScreen
 import com.natersfantasy.piggyrichrpg.presentation.newmember.NewMemberScreen
 import com.natersfantasy.piggyrichrpg.presentation.splashscreen.SplashScreen
 import com.natersfantasy.piggyrichrpg.ui.theme.PiggyRichRPGTheme
@@ -32,7 +33,13 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                     composable(Routes.NEW_MEMBER) {
-                        NewMemberScreen(onPopBackStack = { navController.popBackStack() })
+                        NewMemberScreen(
+                            onPopBackStack = { navController.popBackStack() },
+                            onNavigate = { navController.navigate(it.route) }
+                        )
+                    }
+                    composable(Routes.HOME) {
+                        HomeScreen(onNavigate = { navController.navigate(it.route) })
                     }
                 }
             }

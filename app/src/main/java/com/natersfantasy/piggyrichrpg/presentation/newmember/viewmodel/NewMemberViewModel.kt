@@ -42,6 +42,7 @@ class NewMemberViewModel @Inject constructor(
             is NewMemberEvent.OnStartClick -> {
                 viewModelScope.launch {
                     if (userName.isBlank()) {
+                        // TODO แก้เป็น ShowToast
                         sendUiEvent(UiEvent.ShowSnackbar(
                             message = when(userDisplayLanguage.language) {
                                 "th" -> "กรุณาใส่ชื่อ"
@@ -58,6 +59,7 @@ class NewMemberViewModel @Inject constructor(
                         )
                     )
                     sendUiEvent(UiEvent.PopBackStack)
+                    sendUiEvent(UiEvent.Navigate(Routes.HOME))
                     if (userName.isNotBlank()) {
                         sendUiEvent(UiEvent.Navigate(Routes.HOME))
                     }
