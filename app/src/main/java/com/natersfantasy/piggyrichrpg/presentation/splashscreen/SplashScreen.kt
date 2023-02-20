@@ -10,25 +10,38 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.airbnb.android.showkase.annotation.ShowkaseComposable
 import com.natersfantasy.piggyrichrpg.R
 import com.natersfantasy.piggyrichrpg.ui.theme.MitrFontFamily
 import com.natersfantasy.piggyrichrpg.ui.theme.PiggyRichColor
+import com.natersfantasy.piggyrichrpg.util.UiEvent
 import kotlinx.coroutines.delay
 
 @Composable
-internal fun SplashScreen(navController: NavController) {
+internal fun SplashScreen(
+    onPopBackStack: () -> Unit,
+    onNavigate: (UiEvent.Navigate) -> Unit,
+    viewModel: SplashScreenViewModel = hiltViewModel(),
+) {
+    LaunchedEffect(key1 = true) {
+        viewModel.uiEvent.collect {event ->
+            when(event) {
+                is UiEvent.PopBackStack -> onPopBackStack()
+                is UiEvent.Navigate -> onNavigate(event)
+                else -> Unit
+            }
+        }
+    }
+
     // TODO Make animation
     LaunchedEffect(key1 = true) {
         delay(3000)
-        navController.popBackStack()
-        navController.navigate("UserDetail")
+        viewModel.onEvent(SplashScreenEvent.OnSplashScreenRun)
     }
+
     Column(modifier = Modifier.fillMaxSize()) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {
             AppName()
@@ -75,5 +88,5 @@ fun AppBottomWithMascot() {
 //@Preview(showBackground = true, locale = "th")
 @Composable
 fun SplashScreenPreview() {
-    SplashScreen(rememberNavController())
+    SplashScreen(onPopBackStack = {}, onNavigate = {},)
 }

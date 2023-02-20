@@ -70,17 +70,17 @@ class NewMemberViewModel @Inject constructor(
             }
         }
     }
-    private fun sendUiEvent(event: UiEvent) {
-        viewModelScope.launch { 
-            _uiEvent.send(event)
-        }
-    }
     private fun generateRandomName(nameList: List<Name>): String {
         val random = Random.Default
         val randomIndex = random.nextInt(nameList.size)
         return when (userDisplayLanguage.language) {
             "th" -> nameList[randomIndex].thaiName
             else -> nameList[randomIndex].engName
+        }
+    }
+    private fun sendUiEvent(event: UiEvent) {
+        viewModelScope.launch { 
+            _uiEvent.send(event)
         }
     }
 
