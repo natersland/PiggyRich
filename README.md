@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">PiggyRich (Native Android)</h1>
 
-> **Current version: In developing (🟢🟢🟢🟢⚪️⚪️⚪️⚪️⚪️⚪️ 45% of 100%)**
+> **Current version: In developing (🟢🟢🟢🟢🟢⚪️⚪️⚪️⚪️⚪️ 55% of 100%)**
 
 PiggyRich is the savings app base on leveling system inspired by money saving challenge on the internet. This app will turn your boring money-saving into a hilarious adventure! My app is designed to make saving money a fun and exciting experience, with gamification at its core.
 
@@ -42,7 +42,7 @@ So what are you waiting for? Join our PiggyRich now and start saving money like 
 - [x] 30% - Setup project
 - [x] 35% - Setup theme and color
 - [x] 45% - User can open app and see SplashScreen -> NewMemberScreen with create new character
-- [ ] 55% - User can see HomeScreen with leveling system display
+- [x] 55% - User can see HomeScreen with leveling system display
 - [ ] 60% - User can see current and all challenges list.
 - [ ] 70% - User can touch challenge card and go to ChallengeScreen.
 - [ ] 80% - User can see all level in ChallengeScreen and can finished saving task.
