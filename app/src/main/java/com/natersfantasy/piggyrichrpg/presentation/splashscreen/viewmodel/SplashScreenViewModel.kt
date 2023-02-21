@@ -15,9 +15,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.natersfantasy.piggyrichrpg.util.Routes
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flowOn
+import java.util.*
+import java.util.logging.Handler
 
 @HiltViewModel
 class SplashScreenViewModel @Inject constructor(private val repository: UserRepository) :
@@ -43,13 +44,15 @@ class SplashScreenViewModel @Inject constructor(private val repository: UserRepo
                 .collect { usersList ->
                     users = usersList
 
-                    delay(3000)
-                    if (users.isNotEmpty()) {
-
-                        sendUiEvent(UiEvent.Navigate(Routes.HOME))
-                    } else {
-                        sendUiEvent(UiEvent.Navigate(Routes.NEW_MEMBER))
-                    }
+                    Timer().schedule(object: TimerTask() {
+                        override fun run() {
+                            if (users.isNotEmpty()) {
+                                sendUiEvent(UiEvent.Navigate(Routes.HOME))
+                            } else {
+                                sendUiEvent(UiEvent.Navigate(Routes.NEW_MEMBER))
+                            }
+                        }
+                    }, 3000)
                 }
         }
     }

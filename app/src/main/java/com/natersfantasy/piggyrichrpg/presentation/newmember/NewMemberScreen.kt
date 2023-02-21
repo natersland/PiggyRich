@@ -118,13 +118,13 @@ fun NewMemberForm(
                 enabled = true,
                 modifier = Modifier.padding(top = 8.dp)
             )
+            // Showkase #4
             TextButton(
                 onClick = {
                     val intent = Showkase.getBrowserIntent(context)
                     launcher.launch(intent)
                 },
             ) {
-                // Showkase #4
                 Text(
                     text = "Open Showkase Ja",
                     style = PiggyPigTypography.body1,
