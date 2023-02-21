@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.natersfantasy.piggyrichrpg.util.Routes
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flowOn
 
@@ -27,15 +28,9 @@ class SplashScreenViewModel @Inject constructor(private val repository: UserRepo
     var users by mutableStateOf<List<User?>>(emptyList())
         private set
 
-    fun onEvent(event: SplashScreenEvent) {
-        when (event) {
-            is SplashScreenEvent.OnSplashScreenRun -> {
-                viewModelScope.launch {
-                    sendUiEvent(UiEvent.PopBackStack)
-                    checkIsHaveAnAccount()
-                }
-            }
-        }
+    init {
+        sendUiEvent(UiEvent.PopBackStack)
+        checkIsHaveAnAccount()
     }
 
     private fun checkIsHaveAnAccount() {
@@ -46,14 +41,16 @@ class SplashScreenViewModel @Inject constructor(private val repository: UserRepo
                     println("Error to fetch users data jaaa")
                 }
                 .collect { usersList ->
-                users = usersList
+                    users = usersList
 
-                if (users.isNotEmpty()) {
-                    sendUiEvent(UiEvent.Navigate(Routes.HOME))
-                } else {
-                    sendUiEvent(UiEvent.Navigate(Routes.NEW_MEMBER))
+                    delay(3000)
+                    if (users.isNotEmpty()) {
+
+                        sendUiEvent(UiEvent.Navigate(Routes.HOME))
+                    } else {
+                        sendUiEvent(UiEvent.Navigate(Routes.NEW_MEMBER))
+                    }
                 }
-            }
         }
     }
 

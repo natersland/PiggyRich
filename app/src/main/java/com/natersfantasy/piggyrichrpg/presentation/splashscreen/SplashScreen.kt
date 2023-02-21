@@ -15,7 +15,6 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.airbnb.android.showkase.annotation.ShowkaseComposable
 import com.natersfantasy.piggyrichrpg.R
-import com.natersfantasy.piggyrichrpg.presentation.splashscreen.viewmodel.SplashScreenEvent
 import com.natersfantasy.piggyrichrpg.presentation.splashscreen.viewmodel.SplashScreenViewModel
 import com.natersfantasy.piggyrichrpg.ui.theme.MitrFontFamily
 import com.natersfantasy.piggyrichrpg.ui.theme.PiggyRichColor
@@ -38,10 +37,6 @@ internal fun SplashScreen(
         }
     }
     // TODO Make animation
-    LaunchedEffect(key1 = true) {
-        delay(3000)
-        viewModel.onEvent(SplashScreenEvent.OnSplashScreenRun)
-    }
 
     Column(modifier = Modifier.fillMaxSize()) {
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {
