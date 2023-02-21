@@ -65,8 +65,8 @@ class NewMemberViewModel @Inject constructor(
                     repository.addUser(
                         User(
                             name = userName,
-                            level = 1,
-                            savingMoney = 0,
+                            level = 5,
+                            savingMoney = 55555,
                             id = user?.id
                         )
                     )

@@ -12,7 +12,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -23,6 +22,7 @@ import com.natersfantasy.piggyrichrpg.ui.theme.PiggyPigTypography
 import com.natersfantasy.piggyrichrpg.ui.theme.PiggyRichColor
 import com.natersfantasy.piggyrichrpg.ui.theme.Shapes
 import com.natersfantasy.piggyrichrpg.util.UiEvent
+import com.natersfantasy.piggyrichrpg.util.addCommasToNumber
 
 
 @Composable
@@ -49,6 +49,7 @@ internal fun HomeScreen(
     val userLevel = viewModel.user?.level.toString()
     val userName = viewModel.user?.name
     val savingAmount = viewModel.user?.savingMoney
+    val formattedSavingAmount = addCommasToNumber(savingAmount)
     val userColor = viewModel.userBgColor
     val userMascot = viewModel.userMascot
 
@@ -79,7 +80,7 @@ internal fun HomeScreen(
                     },
                 userColor = userColor,
                 userMascot = userMascot,
-                savingAmount = savingAmount
+                formattedSavingAmount = formattedSavingAmount
             )
             CurrentChallenge(modifier = Modifier
                 .fillMaxWidth()
@@ -156,7 +157,7 @@ fun SavingCard(
     modifier: Modifier,
     userColor: Color,
     userMascot: Int,
-    savingAmount: Int?
+    formattedSavingAmount: String
 ) {
     Box(modifier = modifier) {
         Card(
@@ -164,18 +165,18 @@ fun SavingCard(
                 .wrapContentSize()
                 .padding(bottom = 32.dp, start = 32.dp, end = 32.dp)
                 .offset(y = 300.dp),
-            shape = Shapes.medium
+            shape = Shapes.medium, backgroundColor = Color.White
         ) {
             Column(Modifier.padding(32.dp)) {
                 Text(
                     text = stringResource(id = R.string.home_your_current_saving_text),
-                    style = PiggyPigTypography.h2,
+                    style = PiggyPigTypography.h3,
                     color = PiggyRichColor.Gray818181,
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.Center
                 )
                 Text(
-                    text = savingAmount.toString(), style = PiggyPigTypography.h1,
+                    text = formattedSavingAmount, style = PiggyPigTypography.h1,
                     color = userColor,
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.Center
