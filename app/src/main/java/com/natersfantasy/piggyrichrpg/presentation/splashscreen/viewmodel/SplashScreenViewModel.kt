@@ -9,14 +9,14 @@ import com.natersfantasy.piggyrichrpg.data.user.User
 import com.natersfantasy.piggyrichrpg.data.user.UserRepository
 import com.natersfantasy.piggyrichrpg.util.UiEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.natersfantasy.piggyrichrpg.util.Routes
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.flowOn
 
 @HiltViewModel
 class SplashScreenViewModel @Inject constructor(private val repository: UserRepository) :
@@ -40,7 +40,12 @@ class SplashScreenViewModel @Inject constructor(private val repository: UserRepo
 
     private fun checkIsHaveAnAccount() {
         viewModelScope.launch {
-            repository.getAllUsers().collect { usersList ->
+            repository.getAllUsers()
+                .flowOn(Dispatchers.IO)
+                .catch {
+                    println("Error to fetch users data jaaa")
+                }
+                .collect { usersList ->
                 users = usersList
 
                 if (users.isNotEmpty()) {
