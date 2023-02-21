@@ -15,6 +15,7 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import com.natersfantasy.piggyrichrpg.R
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(

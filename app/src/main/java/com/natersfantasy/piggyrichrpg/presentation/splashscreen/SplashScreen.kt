@@ -37,7 +37,6 @@ internal fun SplashScreen(
             }
         }
     }
-
     // TODO Make animation
     LaunchedEffect(key1 = true) {
         delay(3000)

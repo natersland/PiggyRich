@@ -98,42 +98,42 @@ val PiggyPigTypography = Typography(
 )
 
 // Showkase #2.2
-@ShowkaseTypography(name = "body 1", group = "PiggyRich Font")
+@ShowkaseTypography(group = "PiggyRich Font")
 val body1 = TextStyle(
     fontFamily = MitrFontFamily,
     fontWeight = FontWeight.Normal,
     fontSize = 16.sp,
     letterSpacing = 1.sp
 )
-@ShowkaseTypography(name = "button", group = "PiggyRich Font")
+@ShowkaseTypography(group = "PiggyRich Font")
 val button = TextStyle(
 fontFamily = MitrFontFamily,
 fontWeight = FontWeight.Medium,
 fontSize = 25.sp,
 letterSpacing = 1.sp
 )
-@ShowkaseTypography(name = "h1", group = "PiggyRich Font")
+@ShowkaseTypography(group = "PiggyRich Font")
 val h1 = TextStyle(
 fontFamily = MitrFontFamily,
 fontWeight = FontWeight.Medium,
 fontSize = 40.sp,
 letterSpacing = 1.sp
 )
-@ShowkaseTypography(name = "h2", group = "PiggyRich Font")
+@ShowkaseTypography(group = "PiggyRich Font")
 val h2 = TextStyle(
 fontFamily = MitrFontFamily,
 fontWeight = FontWeight.Medium,
 fontSize = 25.sp,
 letterSpacing = 1.sp
 )
-@ShowkaseTypography(name = "h3", group = "PiggyRich Font")
+@ShowkaseTypography(group = "PiggyRich Font")
 val h3 = TextStyle(
 fontFamily = MitrFontFamily,
 fontWeight = FontWeight.Medium,
 fontSize = 22.sp,
 letterSpacing = 1.sp
 )
-@ShowkaseTypography(name = "h4", group = "PiggyRich Font")
+@ShowkaseTypography(group = "PiggyRich Font")
 val h4 = TextStyle(
 fontFamily = MitrFontFamily,
 fontWeight = FontWeight.Medium,
