@@ -3,7 +3,6 @@ package com.natersfantasy.piggyrichrpg.presentation.newmember.viewmodel
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.natersfantasy.piggyrichrpg.data.user.User
@@ -18,9 +17,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.natersfantasy.piggyrichrpg.ui.theme.userDisplayLanguage
 import com.natersfantasy.piggyrichrpg.util.Routes
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
+import com.natersfantasy.piggyrichrpg.commons.usecases.levelHandling
 import kotlin.random.Random
 
 
@@ -61,12 +58,13 @@ class NewMemberViewModel @Inject constructor(
                         )
                         return@launch
                     }
+                    val randomMoney = Random.nextInt(100000)
 
                     repository.addUser(
                         User(
                             name = userName,
-                            level = 5,
-                            savingMoney = 55555,
+                            level = levelHandling(randomMoney),
+                            savingMoney = randomMoney,
                             id = user?.id
                         )
                     )
@@ -93,6 +91,8 @@ class NewMemberViewModel @Inject constructor(
             else -> nameList[randomIndex].engName
         }
     }
+
+
 
     private fun sendUiEvent(event: UiEvent) {
         viewModelScope.launch {
