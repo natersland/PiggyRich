@@ -170,7 +170,7 @@ fun FormTextField(viewModel: NewMemberViewModel) {
             maxChar.toString()
         ), style = PiggyPigTypography.body1, color = when (userNameLength) {
             in 7..14 -> PiggyRichColor.Lobster
-            15 -> Color.Red
+            in 15..100 -> Color.Red
             else -> PiggyRichColor.Gray818181
         }
     )

@@ -16,9 +16,10 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.natersfantasy.piggyrichrpg.R
+import com.natersfantasy.piggyrichrpg.data.game.Level
+import com.natersfantasy.piggyrichrpg.data.game.levelList
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flowOn
 
 @HiltViewModel
@@ -33,6 +34,9 @@ class HomeViewModel @Inject constructor(
         private set
 
     var userMascot by mutableStateOf(R.drawable.char_chicken)
+        private set
+
+    var currentChallenge by mutableStateOf<Level?>(null)
         private set
 
     private val _uiEvent = Channel<UiEvent>()
@@ -51,6 +55,10 @@ class HomeViewModel @Inject constructor(
             is HomeEvent.OnHandleMascotLevel -> {
                 val result = handleMascotLevel(user?.level)
                 userMascot = result
+            }
+            is HomeEvent.OnHandleCurrentLevel -> {
+                val result = user?.level?.let { handleCurrentChallenge(it) }
+                currentChallenge = result
             }
             is HomeEvent.OnBadgeClick -> {
                 sendUiEvent(UiEvent.Navigate(Routes.BADGE))
@@ -90,6 +98,16 @@ class HomeViewModel @Inject constructor(
                 R.drawable.char_chicken
             }
         }
+    }
+
+    private fun handleCurrentChallenge(level: Int): Level {
+        return Level(
+            level = levelList[level - 1].level,
+            savingGoal = levelList[level - 1].savingGoal,
+            mascotName = levelList[level - 1].mascotName,
+            mascotImage = levelList[level - 1].mascotImage,
+            levelColor = levelList[level - 1].levelColor
+        )
     }
 
     private fun getUser(userId: Int) {

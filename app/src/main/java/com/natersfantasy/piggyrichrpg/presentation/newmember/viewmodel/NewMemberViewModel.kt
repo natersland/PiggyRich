@@ -58,6 +58,19 @@ class NewMemberViewModel @Inject constructor(
                         )
                         return@launch
                     }
+
+                    if (userName.length > 15) {
+                        // TODO แก้เป็น ShowToast
+                        sendUiEvent(
+                            UiEvent.ShowSnackbar(
+                                message = when (userDisplayLanguage.language) {
+                                    "th" -> "ชื่อมีความยาวเกิน 15 ตัวอักษรกรุณาใส่ชื่อใหม่"
+                                    else -> "Name is too long, please provide a new name."
+                                }
+                            )
+                        )
+                        return@launch
+                    }
                     val randomMoney = Random.nextInt(100000)
 
                     repository.addUser(
@@ -91,7 +104,6 @@ class NewMemberViewModel @Inject constructor(
             else -> nameList[randomIndex].engName
         }
     }
-
 
 
     private fun sendUiEvent(event: UiEvent) {

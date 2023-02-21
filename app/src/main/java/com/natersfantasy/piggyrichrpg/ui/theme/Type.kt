@@ -95,6 +95,12 @@ val PiggyPigTypography = Typography(
         fontSize = 20.sp,
         letterSpacing = 1.sp
     ),
+    h5 = TextStyle(
+        fontFamily = MitrFontFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 16.sp,
+        letterSpacing = 1.sp
+    ),
 )
 
 // Showkase #2.2

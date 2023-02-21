@@ -20,18 +20,12 @@
 
     <string name="bath">บาท</string>
 
-    <string name="level_kept_money">เก็บเงิน</string>
-    <string name="level_1_chicken_goal" translatable="false">500</string>
+    <string name="level_kept_money">เก็บเงิน %s บาท</string>
     <string name="level_1_chicken_name">ไก่น้อย</string>
-    <string name="level_2_giraffe_goal" translatable="false">1,000</string>
     <string name="level_2_giraffe_name">ยีราฟหัดเก็บเงิน</string>
-    <string name="level_3_lobster_goal" translatable="false">5,000</string>
     <string name="level_3_lobster_name">ล็อปเตอร์นักลงทุน</string>
-    <string name="level_4_frog_goal" translatable="false">10,000</string>
     <string name="level_4_frog_name">กบสร้างตัว</string>
-    <string name="level_5_dolphin_goal" translatable="false">50,000</string>
-    <string name="level_5_dolphin_name">โลมาพ่อค้าทอง</string>
-    <string name="level_6_cat_goal" translatable="false">100,000</string>
+    <string name="level_5_dolphin_name">โลมาไฮโซ</string>
     <string name="level_6_cat_name">แมวเศรษฐี</string>
 
     <string name="challenge_goal">เป้าหมาย</string>

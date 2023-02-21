@@ -21,6 +21,9 @@ object PiggyRichColor {
     @ShowkaseColor(name = "CatFantasy", group = "PiggyRich Color")
     val Cat = Color(0xFFFFBFA2)
 
+    @ShowkaseColor(group = "Background Color")
+    val MascotBG = Color(0xFFF7F0E9)
+
     @ShowkaseColor(name = "Disable", group = "Other")
     val Disable = Color(0xFFD9D9D9)
 
@@ -30,6 +33,8 @@ object PiggyRichColor {
     val GiraffeBrownText = Color(0xFFAD5E2F)
     @ShowkaseColor(group = "Font Color")
     val Gray818181 = Color(0xFF818181)
+    @ShowkaseColor(group = "Font Color")
+    val Gray9D9D9D = Color(0xFF9D9D9D)
     @ShowkaseColor(group = "Font Color")
     val GrayE5E5E5 = Color(0xFFE5E5E5)
 }
