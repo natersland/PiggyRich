@@ -1,27 +1,57 @@
 package com.natersfantasy.piggyrichrpg.presentation.splashscreen.viewmodel
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.natersfantasy.piggyrichrpg.presentation.splashscreen.viewmodel.SplashScreenEvent
-import com.natersfantasy.piggyrichrpg.util.Routes
+import com.natersfantasy.piggyrichrpg.data.user.User
+import com.natersfantasy.piggyrichrpg.data.user.UserRepository
 import com.natersfantasy.piggyrichrpg.util.UiEvent
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import com.natersfantasy.piggyrichrpg.util.Routes
 
-class SplashScreenViewModel @Inject constructor():ViewModel() {
+@HiltViewModel
+class SplashScreenViewModel @Inject constructor(private val repository: UserRepository) :
+    ViewModel() {
     private val _uiEvent = Channel<UiEvent>()
     val uiEvent = _uiEvent.receiveAsFlow()
 
+    var users by mutableStateOf<List<User?>>(emptyList())
+        private set
+
     fun onEvent(event: SplashScreenEvent) {
-        when(event) {
+        when (event) {
             is SplashScreenEvent.OnSplashScreenRun -> {
-                sendUiEvent(UiEvent.PopBackStack)
-                sendUiEvent(UiEvent.Navigate(Routes.NEW_MEMBER))
+                viewModelScope.launch {
+                    sendUiEvent(UiEvent.PopBackStack)
+                    checkIsHaveAnAccount()
+                }
             }
         }
     }
+
+    private fun checkIsHaveAnAccount() {
+        viewModelScope.launch {
+            repository.getAllUsers().collect { usersList ->
+                users = usersList
+
+                if (users.isNotEmpty()) {
+                    sendUiEvent(UiEvent.Navigate(Routes.HOME))
+                } else {
+                    sendUiEvent(UiEvent.Navigate(Routes.NEW_MEMBER))
+                }
+            }
+        }
+    }
+
     private fun sendUiEvent(event: UiEvent) {
         viewModelScope.launch {
             _uiEvent.send(event)
