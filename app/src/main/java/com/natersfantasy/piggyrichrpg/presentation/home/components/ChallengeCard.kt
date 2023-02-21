@@ -29,15 +29,6 @@ internal fun ChallengeCard(
     isUnlock: Boolean
 ) {
 
-    val contrast = 2f // 0f..10f (1 should be default)
-    val brightness = -180f // -255f..255f (0 should be default)
-    val colorMatrix = floatArrayOf(
-        contrast, 0f, 0f, 0f, brightness,
-        0f, contrast, 0f, 0f, brightness,
-        0f, 0f, contrast, 0f, brightness,
-        0f, 0f, 0f, 1f, 0f
-    )
-
     Card(
         modifier = Modifier
             .fillMaxWidth()

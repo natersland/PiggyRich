@@ -224,27 +224,6 @@ fun AllChallenge(modifier: Modifier) {
 //        LazyColumn() {
 //            // TODO Show all challenge with handle isActive status
 //        }
-        Column {
-            Text(
-                text = stringResource(id = R.string.home_all_challenge),
-                style = PiggyPigTypography.h3,
-                color = PiggyRichColor.Gray818181
-            )
-            ChallengeCard(
-                savingGoal = addCommasToNumber(99999),
-                mascotName = "โลมาพ่อค้าทอง",
-                mascotImage = R.drawable.char_chicken,
-                challengeColor = PiggyRichColor.Chicken,
-                isUnlock = true
-            )
-            ChallengeCard(
-                savingGoal = addCommasToNumber(99999),
-                mascotName = "โลมาพ่อค้าทอง",
-                mascotImage = R.drawable.char_chicken,
-                challengeColor = PiggyRichColor.Chicken,
-                isUnlock = true
-            )
-        }
     }
 }
 
