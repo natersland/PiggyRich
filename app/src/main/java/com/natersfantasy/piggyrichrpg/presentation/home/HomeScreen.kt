@@ -6,6 +6,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -14,7 +15,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.natersfantasy.piggyrichrpg.R
+import com.natersfantasy.piggyrichrpg.presentation.home.viewmodel.HomeEvent
+import com.natersfantasy.piggyrichrpg.presentation.home.viewmodel.HomeViewModel
 import com.natersfantasy.piggyrichrpg.ui.theme.PiggyPigTypography
 import com.natersfantasy.piggyrichrpg.ui.theme.PiggyRichColor
 import com.natersfantasy.piggyrichrpg.ui.theme.Shapes
@@ -24,17 +28,29 @@ import com.natersfantasy.piggyrichrpg.util.UiEvent
 @Composable
 internal fun HomeScreen(
     onNavigate: (UiEvent.Navigate) -> Unit,
-//    viewModel: HomeViewModel = hiltViewModel()
+    viewModel: HomeViewModel = hiltViewModel()
 ) {
-//    LaunchedEffect(key1 = true) {
-//        viewModel.uiEvent.collect { event ->
-//            when(event) {
-//                is UiEvent.Navigate -> onNavigate(event)
-//                else -> Unit
-//            }
-//
-//        }
-//    }
+
+    LaunchedEffect(key1 = true) {
+        viewModel.uiEvent.collect { event ->
+            when (event) {
+                is UiEvent.Navigate -> onNavigate(event)
+                else -> Unit
+            }
+
+        }
+    }
+
+    LaunchedEffect(key1 = true) {
+        viewModel.onEvent(HomeEvent.OnHandleMascotLevel)
+        viewModel.onEvent(HomeEvent.OnHandleColorBgLevel)
+    }
+
+    val userLevel = viewModel.user?.level.toString()
+    val userName = viewModel.user?.name
+    val savingAmount = viewModel.user?.savingMoney
+    val userColor = viewModel.userBgColor
+    val userMascot = viewModel.userMascot
 
     Box(modifier = Modifier.fillMaxSize()) {
         ConstraintLayout() {
@@ -44,18 +60,26 @@ internal fun HomeScreen(
                 currentChallengeRef,
                 allChallengeRef
             ) = createRefs()
-            HomeHeader(modifier = Modifier
-                .fillMaxWidth()
-                .constrainAs(headerRef) {
-                    start.linkTo(parent.start)
-                    top.linkTo(parent.top)
-                })
+            HomeHeader(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .constrainAs(headerRef) {
+                        start.linkTo(parent.start)
+                        top.linkTo(parent.top)
+                    },
+                userLevel = userLevel,
+                userName = userName,
+                userColor = userColor
+            )
             SavingCard(
                 modifier = Modifier
                     .fillMaxWidth()
                     .constrainAs(savingCardRef) {
 
-                    }
+                    },
+                userColor = userColor,
+                userMascot = userMascot,
+                savingAmount = savingAmount
             )
             CurrentChallenge(modifier = Modifier
                 .fillMaxWidth()
@@ -64,7 +88,8 @@ internal fun HomeScreen(
                     start.linkTo(parent.start)
                 }
                 .offset(y = 300.dp)
-                .padding(horizontal = 24.dp))
+                .padding(horizontal = 24.dp),
+                )
             AllChallenge(modifier = Modifier
                 .fillMaxWidth()
                 .constrainAs(allChallengeRef) {
@@ -72,7 +97,7 @@ internal fun HomeScreen(
                     top.linkTo(currentChallengeRef.bottom)
                 }
                 .padding(horizontal = 24.dp)
-                .offset(y = 300.dp)
+                .offset(y = 300.dp),
             )
         }
     }
@@ -80,14 +105,17 @@ internal fun HomeScreen(
 }
 
 @Composable
-fun HomeHeader(modifier: Modifier) {
-//    val userLevel = viewModel.userLevel.toString()
-//    val userName = viewModel.userName
-//    val userColor = viewModel.userBgColor
+fun HomeHeader(
+    modifier: Modifier,
+    userLevel: String,
+    userName: String?,
+    userColor: Color
+) {
+
 
     Box(modifier = modifier) {
         Card(
-            backgroundColor = PiggyRichColor.Chicken,
+            backgroundColor = userColor,
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(bottomStart = 35.dp, bottomEnd = 35.dp)
         ) {
@@ -102,10 +130,14 @@ fun HomeHeader(modifier: Modifier) {
                         painter = painterResource(id = R.drawable.star),
                         contentDescription = "Go to Badge Screen",
                     )
-                    Text(text = "Level 1", style = PiggyPigTypography.h3, color = Color.White)
+                    Text(
+                        text = stringResource(id = R.string.home_user_level, userLevel),
+                        style = PiggyPigTypography.h3,
+                        color = Color.White
+                    )
                 }
                 Text(
-                    text = "แม่มดน้อยโดเรมี",
+                    text = userName ?: "Unknown",
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 32.dp),
@@ -120,11 +152,12 @@ fun HomeHeader(modifier: Modifier) {
 }
 
 @Composable
-fun SavingCard(modifier: Modifier) {
-//    val userMascot = viewModel.userMascot
-//    val userSavingAmount = viewModel.savingAmount.toString()
-    // TODO user color for saving text
-
+fun SavingCard(
+    modifier: Modifier,
+    userColor: Color,
+    userMascot: Int,
+    savingAmount: Int?
+) {
     Box(modifier = modifier) {
         Card(
             modifier
@@ -142,8 +175,8 @@ fun SavingCard(modifier: Modifier) {
                     textAlign = TextAlign.Center
                 )
                 Text(
-                    text = "30,000", style = PiggyPigTypography.h1,
-                    color = PiggyRichColor.Chicken,
+                    text = savingAmount.toString(), style = PiggyPigTypography.h1,
+                    color = userColor,
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.Center
                 )
@@ -156,7 +189,7 @@ fun SavingCard(modifier: Modifier) {
             }
         }
         Image(
-            painter = painterResource(id = R.drawable.char_chicken),
+            painter = painterResource(id = userMascot),
             contentDescription = "User Animal Mascot",
             modifier = modifier
                 .offset(y = 170.dp)
@@ -167,8 +200,6 @@ fun SavingCard(modifier: Modifier) {
 
 @Composable
 fun CurrentChallenge(modifier: Modifier) {
-//    val userCurrentChallenge = viewModel.userLevel
-
     Box(modifier = modifier.fillMaxWidth()) {
         Text(
             text = stringResource(id = R.string.home_current_challenge),
@@ -182,7 +213,7 @@ fun CurrentChallenge(modifier: Modifier) {
 }
 
 @Composable
-fun AllChallenge(modifier: Modifier) {
+fun AllChallenge(modifier: Modifier,) {
     Box(modifier = modifier) {
         Text(
             text = stringResource(id = R.string.home_all_challenge),
@@ -190,12 +221,12 @@ fun AllChallenge(modifier: Modifier) {
             color = PiggyRichColor.Gray818181
         )
 //        LazyColumn() {
-//            // TODO Handle to show current challenge
+//            // TODO Show all challenge with handle isActive status
 //        }
     }
 }
 
-@Preview(showBackground = true, locale = "th")
+//@Preview(showBackground = true, locale = "th")
 @Composable
 fun HomeScreenPreview() {
     HomeScreen(onNavigate = {})

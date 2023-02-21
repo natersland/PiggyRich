@@ -1,17 +1,22 @@
 package com.natersfantasy.piggyrichrpg.data.user
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
+import androidx.room.OnConflictStrategy.Companion.IGNORE
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface UserDao {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = IGNORE)
     suspend fun addUser(user: User)
 
-    @Query("SELECT * FROM user_table WHERE id = :id")
-    suspend fun  getCurrentUserData(id: Int): User?
+    @Delete
+    suspend fun deleteUser(user: User)
+
+    @Query("SELECT * FROM User WHERE id = :id")
+    fun getCurrentUser(id: Int): Flow<User?>?
+
+    @Query("SELECT * FROM User")
+    fun getAllUser(): Flow<List<User>>
 
 }

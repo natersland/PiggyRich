@@ -1,18 +1,25 @@
 package com.natersfantasy.piggyrichrpg.data.user
 
+import kotlinx.coroutines.flow.Flow
+
 interface UserRepository  {
     suspend fun addUser(user: User)
-    suspend fun  getCurrentUserData(id: Int): User?
+    suspend fun  getCurrentUser(userId: Int?): Flow<User?>?
+    fun  getAllUsers(): Flow<List<User>>
 }
 
 class UserRepositoryImpl(
-    private val dao: UserDao
+    private val userDao: UserDao
 ): UserRepository {
     override suspend fun addUser(user: User) {
-        dao.addUser(user)
+        userDao.addUser(user)
     }
 
-    override suspend fun getCurrentUserData(id: Int): User? {
-        return dao.getCurrentUserData(id)
+    override suspend fun getCurrentUser(userId: Int?): Flow<User?>?{
+        return userId?.let { userDao.getCurrentUser(it) }
+    }
+
+    override fun getAllUsers(): Flow<List<User>> {
+        return userDao.getAllUser()
     }
 }

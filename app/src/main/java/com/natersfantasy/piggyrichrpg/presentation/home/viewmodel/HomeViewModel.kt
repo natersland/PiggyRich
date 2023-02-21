@@ -16,22 +16,17 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.natersfantasy.piggyrichrpg.R
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flowOn
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    val repository: UserRepository
+    private val repository: UserRepository
 ) : ViewModel() {
 
     var user by mutableStateOf<User?>(null)
-        private set
-
-    var userName by mutableStateOf("")
-        private set
-
-    var userLevel by mutableStateOf(0)
-        private set
-
-    var savingAmount by mutableStateOf(0)
         private set
 
     var userBgColor by mutableStateOf(PiggyRichColor.Chicken)
@@ -43,15 +38,12 @@ class HomeViewModel @Inject constructor(
     private val _uiEvent = Channel<UiEvent>()
     val uiEvent = _uiEvent.receiveAsFlow()
 
-    suspend fun onEvent(event: HomeEvent) {
-        // TODO fetch user data from local
+    init {
+        getUser(1)
+    }
+
+    fun onEvent(event: HomeEvent) {
         when (event) {
-            is HomeEvent.OnGetUserName -> {
-                userName = event.name
-            }
-            is HomeEvent.OnGetUserLevel -> {
-                userLevel = event.level
-            }
             is HomeEvent.OnHandleColorBgLevel -> {
                 val result = handleBgColorLevel(user?.level)
                 userBgColor = result
@@ -59,9 +51,6 @@ class HomeViewModel @Inject constructor(
             is HomeEvent.OnHandleMascotLevel -> {
                 val result = handleMascotLevel(user?.level)
                 userMascot = result
-            }
-            is HomeEvent.OnSavingAmountChange -> {
-                savingAmount = user?.savingMoney.let { savingAmount }
             }
             is HomeEvent.OnBadgeClick -> {
                 sendUiEvent(UiEvent.Navigate(Routes.BADGE))
@@ -88,8 +77,9 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
-    private fun handleMascotLevel(level: Int?):Int {
-        return when(level) {
+
+    private fun handleMascotLevel(level: Int?): Int {
+        return when (level) {
             1 -> R.drawable.char_chicken
             2 -> R.drawable.char_giraffe
             3 -> R.drawable.char_lobster
@@ -99,6 +89,19 @@ class HomeViewModel @Inject constructor(
             else -> {
                 R.drawable.char_chicken
             }
+        }
+    }
+
+    private fun getUser(userId: Int) {
+        viewModelScope.launch {
+            repository.getCurrentUser(userId)
+                ?.flowOn(Dispatchers.IO)
+                ?.catch {
+                    println("Failed to fetch user data ja")
+                }
+                ?.collect { userData ->
+                    user = userData
+                }
         }
     }
 
