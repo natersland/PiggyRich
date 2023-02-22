@@ -24,7 +24,7 @@ So what are you waiting for? Join our PiggyRich now and start saving money like 
 - Architecture: MVVM
 - Design Tool: Figma
 - UI Toolkit: Jetpack Compose
-- Dependencie Injection: Dagger Hilt
+- Dependencie Injection: Hilt
 - Database: Room
 - Other Library: 
   - Showkase: https://github.com/airbnb/Showkase
