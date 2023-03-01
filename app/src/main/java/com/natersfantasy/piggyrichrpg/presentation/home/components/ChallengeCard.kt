@@ -1,5 +1,6 @@
 package com.natersfantasy.piggyrichrpg.presentation.home.components
 
+import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
@@ -59,16 +60,24 @@ internal fun ChallengeCard(
                     .offset(y = 20.dp)
                     .padding(end = 4.dp),
                 colorFilter = if (isUnlock) null else ColorFilter.tint(PiggyRichColor.Gray9D9D9D)
-                )
+            )
         }
 
 
     }
 }
 
-@Preview(showBackground = true, locale = "th")
+@Preview(name = "th_light", showBackground = true, locale = "th")
+@Preview(name = "en_light", showBackground = true, locale = "en")
+@Preview(
+    name = "th_dark",
+    showBackground = true,
+    locale = "th",
+    uiMode = Configuration.UI_MODE_NIGHT_YES
+)
+@Preview(name = "th_large_font", showBackground = true, locale = "th", fontScale = 1.5f)
 @Composable
-fun ChallengeCardPreview() {
+fun ChallengeCard_Preview() {
     PiggyRichRPGTheme() {
         ChallengeCard(
             savingGoal = addCommasToNumber(5000),

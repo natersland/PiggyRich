@@ -62,7 +62,3 @@ fun RoundedButtonPreview() {
         )
     }
 }
-
-enum class ButtonTextSize {
-    MidLarge
-}

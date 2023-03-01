@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                     composable(Routes.HOME) {
-                        HomeScreen(onNavigate = { navController.navigate(it.route) })
+//                        HomeScreen(onNavigate = { navController.navigate(it.route) })
                     }
                 }
             }

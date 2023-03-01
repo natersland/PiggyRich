@@ -118,7 +118,6 @@ fun NewMemberForm(
                 enabled = true,
                 modifier = Modifier.padding(top = 8.dp)
             )
-            // Showkase #4
             TextButton(
                 onClick = {
                     val intent = Showkase.getBrowserIntent(context)
