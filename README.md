@@ -34,7 +34,7 @@ So what are you waiting for? Join our PiggyRich now and start saving money like 
 
 
 ## Developing Task
-<em>Version 1.0 - 10 Mar 2023 (2 sprint)</em>
+<em>Version 1.0 - 24 Mar 2023 (2 sprint)</em>
 - [x] 5% - POC about Showkase
 - [x] 10% - POC about Paparazzi
 - [x] 20% - UX & UI Design: <a href="https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-id=0%3A1&t=QPZ5B0ve84NlezL5-1">Figma</a>
