@@ -48,6 +48,7 @@ So what are you waiting for? Join our PiggyRich now and start saving money like 
 - [ ] 80% - User can see all level in ChallengeScreen and can finished saving task.
 - [ ] 90% - User can see current challenge challenge and after challenge finished the challenge must move to all challenge with verify icon
 - [ ] 100% - (Optional / v2) User can go to BadgeScreen and see all badge
+- [ ] Presentation : https://www.canva.com/design/DAFa7eaO2VI/HQF8f4r-98_6SLmCpTb2dA/edit?utm_content=DAFa7eaO2VI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 ## Contributor
 🦙Akira Chenyavanij
