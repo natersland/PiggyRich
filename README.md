@@ -34,7 +34,7 @@ So what are you waiting for? Join our PiggyRich now and start saving money like 
 
 
 ## Developing Task
-<em>Version 1.0 - 24 Mar 2023 (2 sprint)</em>
+<em>Version 1.0</em>
 - [x] 5% - POC about Showkase
 - [x] 10% - POC about Paparazzi
 - [x] 20% - UX & UI Design: <a href="https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-id=0%3A1&t=QPZ5B0ve84NlezL5-1">Figma</a>
@@ -48,13 +48,6 @@ So what are you waiting for? Join our PiggyRich now and start saving money like 
 - [ ] 80% - User can see all level in ChallengeScreen and can finished saving task.
 - [ ] 90% - User can see current challenge challenge and after challenge finished the challenge must move to all challenge with verify icon
 - [ ] 100% - (Optional / v2) User can go to BadgeScreen and see all badge
-
-
-## Todo
-- [ ] I have checked that the code run smoothly on Android devices
-- [ ] I have checked the format & indentation
-- [ ] I have removed all logs
-- [ ] I have made presentation for demo app: <a href="https://www.canva.com/design/DAFa7eaO2VI/g8gy7APXHLF6AKGDaYJp0w/view?utm_content=DAFa7eaO2VI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Presentation</a>
 
 ## Contributor
 🦙Akira Chenyavanij
