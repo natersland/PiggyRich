@@ -37,7 +37,7 @@ So what are you waiting for? Join our PiggyRich now and start saving money like 
 <em>Version 1.0</em>
 - [x] 5% - POC about Showkase
 - [x] 10% - POC about Paparazzi
-- [x] 20% - UX & UI Design: <a href="https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-id=0%3A1&t=QPZ5B0ve84NlezL5-1">Figma</a>
+- [x] 20% - <a href="https://www.figma.com/file/z1KngoL2LVt7Aro2gMqaeY/PiggyRich?node-id=0%3A1&t=QPZ5B0ve84NlezL5-1">UX & UI Design</a>
 - [x] 25% - List all stack
 - [x] 30% - Setup project
 - [x] 35% - Setup theme and color
