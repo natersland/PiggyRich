@@ -72,15 +72,6 @@ interface HomeScreenViewModel {
 //        viewModel.onEvent(HomeEvent.OnHandleColorBgLevel)
 //        viewModel.onEvent(HomeEvent.OnHandleCurrentLevel)
 //    }
-//
-//
-//
-//    Column(
-//        Modifier
-//            .fillMaxSize()
-//            .padding(24.dp)) {
-//
-//    }
 //}
 
 @Composable

@@ -18,6 +18,7 @@ import javax.inject.Inject
 import com.natersfantasy.piggyrichrpg.R
 import com.natersfantasy.piggyrichrpg.data.game.Level
 import com.natersfantasy.piggyrichrpg.data.game.levelList
+import com.natersfantasy.piggyrichrpg.presentation.home.HomeScreenViewAction
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flowOn
@@ -71,7 +72,7 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
-
+    
     private fun handleBgColorLevel(level: Int?): androidx.compose.ui.graphics.Color {
         return when (level) {
             1 -> PiggyRichColor.Chicken

@@ -67,15 +67,22 @@ internal fun ChallengeCard(
     }
 }
 
-@Preview(name = "th_light", showBackground = true, locale = "th")
-@Preview(name = "en_light", showBackground = true, locale = "en")
+@Preview(name = "th_light", group = "HomeScreen", showBackground = true, locale = "th")
+@Preview(name = "en_light", group = "HomeScreen", showBackground = true, locale = "en")
 @Preview(
     name = "th_dark",
+    group = "HomeScreen",
     showBackground = true,
     locale = "th",
     uiMode = Configuration.UI_MODE_NIGHT_YES
 )
-@Preview(name = "th_large_font", showBackground = true, locale = "th", fontScale = 1.5f)
+@Preview(
+    name = "th_large_font",
+    group = "HomeScreen",
+    showBackground = true,
+    locale = "th",
+    fontScale = 1.5f
+)
 @Composable
 fun ChallengeCard_Preview() {
     PiggyRichRPGTheme() {
